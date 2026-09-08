@@ -1,0 +1,609 @@
+\documentclass[12pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx} % Required for \includegraphics
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{autobreak}
+\usepackage{amsmath}
+\usepackage{breqn}
+
+\usepackage{amsmath,amssymb}
+\usepackage{parskip}       % Correct paragraph spacing
+\usepackage{xcolor}        % Required for \textcolor command
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{pgfplotstable}
+\usepackage{siunitx}
+\usepackage{geometry}
+
+\setlist{nosep}           % Reduce vertical spacing in lists
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % sau ultima versiune instalată la tine
+\usepackage{filecontents} % dacă 
+% --- Page Setup ---
+\geometry{a4paper, margin=1in, top=1.2in, headheight=35pt} % Expanded top margin & headheight for the ornament
+
+\lstset{
+    language=python,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{blue!5},
+    keywordstyle=\color{purple!80!blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red!70!black},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=15pt,
+    frame=shadowbox,
+    rulesepcolor=\color{blue!20},
+    frameround=tttt,
+    breaklines=true,
+    captionpos=b,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=20pt,
+    xrightmargin=5pt
+}
+
+% --- Header & Footer Configuration ---
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+
+% Center the ornament in the header (antet)
+\chead{\includegraphics[width=4cm]{ornament_6.pdf}}
+
+% Center the page number in the footer
+\cfoot{\thepage}
+
+% Optional: Remove the default rule line below the header
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{fancy} % Force header/footer onto the title page
+    \centering
+    
+    \vspace*{4cm}
+
+    % Main Title
+    {\Huge \bfseries Homework 1}
+
+    \vspace{4cm}
+
+    % Name and Date
+    {\Large \textbf{Name:} Gatman Vitalie} \\[0.5em]
+    {\Large \textbf{Date:} \today} \\[0.5em]
+    {\Large \textbf{Group:} FAF-263}
+
+    \vfill
+\end{titlepage}
+
+\newpage
+
+% Page 2 content...
+\section*{Problem 1.3}
+
+We define the power set $2^A$ as the set containing all possible distinct
+subsets of $A$, including the empty set $\varnothing$ and $A$ itself.
+For the given examples, we have:
+
+\begin{enumerate}[label=\alph*)]
+
+    \item For $A = \{2,\,5\}$, we have
+    \[
+    2^A = \left\{
+    \varnothing,\,
+    \{2\},\,
+    \{5\},\,
+    \{2,\,5\}
+    \right\}.
+    \]
+
+    \item For $A = \{f,\,a,\,f\}$, we have
+    \[
+    2^A = \left\{
+    \varnothing,\,
+    \{f\},\,
+    \{a\},\,
+    \{f,\,a\}
+    \right\}.
+    \]
+    This is because sets cannot contain duplicate elements. Therefore,
+    \[
+    A = \{f,\,a,\,f\} = \{f,\,a\},
+    \]
+    so $2^A = 2^{\{f,\,a\}}$.
+
+    \item For $A = \{\varnothing,\,\{z\}\}$, we have
+    \[
+    2^A =
+    \left\{
+    \varnothing,\,
+    \{\varnothing\},\,
+    \{\{z\}\},\,
+    \{\varnothing,\,\{z\}\}
+    \right\}.
+    \]
+    This is because $A$ has two distinct elements, namely $\varnothing$
+    and $\{z\}$. Therefore, its power set contains all four possible
+    subsets of these two elements.
+
+\end{enumerate}
+
+To find the power set of the power set of $A$, $2^{2^A}$, we first compute
+$2^A$. We then treat $2^A$ as an ordinary set and compute its power set.
+For instance, in example (a), we have $A = \{2,\,5\}$. If we define
+$B = 2^A$, then
+
+\[
+B = \left\{
+\varnothing,\,
+\{2\},\,
+\{5\},\,
+\{2,\,5\}
+\right\}.
+\]
+
+Therefore,
+
+\[
+2^{2^A} = 2^B,
+\]
+
+which is simply the power set of $B$.
+\vspace{1cm}
+\subsection*{My code for iterating power sets}
+\begin{lstlisting}[language=python]
+from itertools import combinations
+
+def latex_element(element):
+    """Convert a single element to LaTeX."""
+
+    if element == EMPTY_SET:
+        return r"\varnothing"
+
+    if isinstance(element, str):
+        if element.strip() in {"\\varnothing"}:
+            return r"\varnothing"
+
+        replacements = {
+            "\\": r"\textbackslash{}",
+            "&": r"\&",
+            "%": r"\%",
+            "$": r"\$",
+            "#": r"\#",
+            "_": r"\_",
+            "{": r"\{",
+            "}": r"\}",
+        }
+
+        result = element
+        for old, new in replacements.items():
+            result = result.replace(old, new)
+
+        return r"\text{" + result + "}"
+
+    return str(element)
+
+
+def latex_set(s):
+    """Recursively convert a Python set/frozenset into LaTeX."""
+
+    if len(s) == 0:
+        return r"\varnothing"
+
+    elements = sorted(s, key=str)
+
+    formatted = []
+
+    for element in elements:
+
+        if isinstance(element, (set, frozenset)):
+            formatted.append(latex_set(element))
+
+        elif element == EMPTY_SET:
+            formatted.append(r"\varnothing")
+
+        else:
+            formatted.append(latex_element(element))
+
+    return r"\{" + r",\, ".join(formatted) + r"\}"
+
+
+# ---------- Power set ----------
+
+def power_set(s):
+    """Return the power set of s as a set of frozensets."""
+
+    elements = list(s)
+
+    return {
+        frozenset(combination)
+        for r in range(len(elements) + 1)
+        for combination in combinations(elements, r)
+    }
+
+
+# ---------- Input ----------
+
+EMPTY_SET = "__EMPTY_SET__"
+
+
+def parse_element(x):
+
+    x = x.strip()
+
+    if x in {"\\varnothing"}:
+        return EMPTY_SET
+
+    try:
+        return int(x)
+    except ValueError:
+        pass
+
+    try:
+        return float(x)
+    except ValueError:
+        pass
+
+    return x
+
+
+def main():
+
+    print("Power Set Generator")
+    print("--------------------")
+
+    raw = input(
+        "Enter the elements separated by commas "
+        "(example: 2, 5, hello, world):\n> "
+    )
+
+    elements = [parse_element(x) for x in raw.split(",")]
+
+    # Remove dopubles
+    original_set = frozenset(elements)
+
+    iterations = int(
+        input(
+            "\nNumber of iterations "
+            "(1 = P(A), 2 = P(P(A)), etc.):\n> "
+        )
+    )
+
+    filename = "powerset.tex"
+
+    if not filename:
+        filename = "power_set.tex"
+
+    if not filename.endswith(".tex"):
+        filename += ".tex"
+
+    current = original_set
+
+    for i in range(iterations):
+        current = power_set(current)
+
+        print(
+            f"Iteration {i + 1}: "
+            f"{len(current)} elements"
+        )
+
+    output = latex_set(current)
+
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(output)
+
+    print(f"\nDone!")
+    print(f"Result written to: {filename}")
+
+    if len(output) < 5000:
+        print("\nLaTeX output:")
+        print(output)
+    else:
+        print(
+            f"\nThe LaTeX output is {len(output):,} characters long."
+        )
+
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+
+\newpage
+
+
+\section*{Problem 1.4}
+Lemma 1.4.1 If $A \subset B$ them $A\cap B = A$.\\ 
+Lemma 1.4.2 If $A \subset B$ them $A\cup B = B$.\\ 
+Lemma 1.4.3
+$C\setminus B = C \cap \bar{B}$\\
+\begin{enumerate}[label=\alph*)]
+\item
+$ (C\setminus B) \subset (C\setminus A ) \implies  (C\setminus B ) \cap  (C\setminus A )=  (C\setminus B )$\\
+$(C\setminus B ) \cap  (C\setminus A ) = (C\cap \bar{B} ) \cap  (C \cap \bar{A} ) = C\cap \bar{B} \cap  C \cap \bar{A} = C\cap (\bar{B} \cap \bar{A})$ \\
+that because union is asociative and comunative and we have the property $C\cap C = C$.\\
+From DeMorgan property we have $\bar{B} \cap \bar {A}=\overline{B\cup A}$. \\From Lemma 1.4.2  $\overline{B\cup A} =  \overline{B} \Rightarrow C\cap (\bar{B} \cap \bar{A})= C \cap \bar{B}$.
+ And using DeMorgan property we get $C \cap \bar{B} = C\setminus B$
+
+ \item $(A\setminus B)\setminus(B\setminus C)= A \setminus B$ \\
+ $(A\setminus B)\setminus(B\setminus C) = (A\cap \bar{B})\cap(\overline{B\cap \bar{C}})= (A\cap \bar{B})\cap({\bar{B}\cup \bar{\bar{C}}})$\\
+ we have $\bar{\bar{C}} = C$ because the set contain all the elelemnts that are not contained in the set that has all the element not contained in set C is C.\\
+ $(A\cap \bar{B})\cap(\bar{B}\cup C)= (A\cap \bar{B}\cap\bar{B})\cup (A\cap \bar{B}\cap C) = (A\cap \bar{B})\cup (A\cap \bar{B}\cap C) $ \\
+ By $E$ we define the set containing evrything\\
+$(A\cap \bar{B})\cup (A\cap \bar{B}\cap C) = ((A\cap \bar{B}) \cap E)\cup ((A\cap \bar{B})\cap C) = (A\cap \bar{B}) \cap (E \cup C)$\\
+From the property on the evrything set $
+\begin{cases}
+  E \cup C = E \\
+  E \cap C = C
+\end{cases} \Rightarrow \\ \Rightarrow (A\cap \bar{B}) \cap (E \cup C) = (A \cap \bar{B})\cap E =A \cap \bar{B} = A \setminus B$
+
+\item $A \cup (A \cap B) = A$\\
+we allredy did this at point b) but i will do it once again here. 
+By $E$ we define the set containing evrything\\
+From the property on the evrything set $
+\begin{cases}
+  E \cup A = E \\
+  E \cap A = A
+\end{cases}$
+\\
+$A \cup (A \cap B) = (A \cap E) \cup (A \cap B) = A \cap (E \cup B) = A$
+
+\end{enumerate}
+
+\section*{Problem 1.5}
+\[\left(\bigcap_{i=1}^n A_i\right)^c=\bigcup_{i=1}^n A_i^c\]\\
+If $X$ is an element of all sets $A_i$ them $x \in  \bigcap_{i=1}^n A_i \Rightarrow x \not\in \left(\bigcap_{i=1}^n A_i\right)^c$ and olso that means that $X$ is in none of the sets $A_i^c$ sets them $X \not\in \bigcup_{i=1}^n A_i^c$ and both conditions are equivalent wich implies that DeMorgan indenty rule is true for $X$ in all sets 
+$A_i$.\\
+If $X$ is not an element of any set $A_i$ them $x \not\in  \bigcap_{i=1}^n A_i \Rightarrow x \in \left(\bigcap_{i=1}^n A_i\right)^c$ and olso that means that $X$ is in at least one of the sets $A_i^c$ them $X \not\in \bigcup_{i=1}^n A_i^c$ and both conditions are equivalent wich implies that DeMorgan indenty rule is true for $X$ in none of the sets 
+$A_i$.
+
+\section*{Problem 1.6}
+\begin{enumerate}[label=\alph*)]
+    \item $X \times Y = \{(a, b), (a, c), (a, d), (b, b), (b, c), (b, d)\}$
+    \item $Y^2 = Y \times Y = \{(b, b), (b, c), (b, d), (c, b), (c, c), (c, d), (d, b), (d, c), (d, d)\}$
+    \item $Y \times X \times X = \{(b, a, a), (b, a, b), (b, b, a), (b, b, b), (c, a, a), (c, a, b), (c, b, a), (c, b, b),$\\$ (d, a, a), (d, a, b), (d, b, a), (d, b, b)\}$
+\end{enumerate}
+At  point $c)$ we just treat $Y \times X$ as a new set.
+
+\section*{Problem 1.7}
+$A \times B = \{(a, b) \;|\; a \in A,\; b \in B\}$
+If $A \times B = B \times A$ that means that any arbitrary orderet set $(a,\,b)$ should exist in both producs. So we have $(a,\,b) \in A \times B$ for $a \in A, \; b \in B$ and \\ $(a,\,b) \in B \times A$ for $b \in A, \; a \in B$ wich results that $a$ is in $A$ and $B$ and $b$ is in $A$ and $B$ and both $a$ and $b$ are any arbitraly element from $A$ and conseuncutivly $B$ wich means that this is posible only if $A=B$.
+ If $A \times B = \varnothing$ either $A$ or $B$ should be $varnothing$ because from the property of the cartesian product if $a \in \varnothing$ there are no ordered sets to pair because $\varnothing$ is an empty set. Consequancely   $B \times A = \{(a, b) \;|\; a \in B,\; b \in A\}$ and is again $\varnothing$ because $A=\varnothing$ so there does not exist any $b$ element so we proved that 
+ $
+\begin{cases}
+  A \times B = \varnothing \\
+  B \times A = \varnothing
+\end{cases} \rightarrow A \times B = B \times A = \varnothing
+ $
+\newpage
+ \section*{Problem 1.8}
+ \begin{enumerate}[label=\arabic*.]
+    \item $f(n) = a$\\
+    $n+2=a \Rightarrow n = 2-a$ this is a straing line so it only maps to one element so is injective
+    $f(0)=0+2=2$,  $f(n)=0 \Rightarrow 2+n = 0 \Rightarrow n = -2 \not \in \ \mathbb{N}$ wich means is not surjective and bijective
+    \item This is another straing line so is injective because it has only one solution for any $g(x) = a$. It has a interesting properti in only outputs odd numbers so is not surjective and bijective.\\
+    $g(0) = -5$, $g(n) = 0 \Rightarrow 2n-5 = 0 \Rightarrow n = 2.5 \not\in \mathbb{Z}$
+    \item we define $h(x)$ as 
+    $h(x) = \sum_{k=0}^{\lfloor \log_{10} x \rfloor} \left( \lfloor x \cdot 10^{-k} \rfloor \bmod 10 \right)$ where $\lfloor x \rfloor$ is the lower bound of x. $h(21) = 3$ and $h(12) = 3$ so $h(x)$ is not injective. $h(x)$ can input negative numbers but do to this nature cann't output negative numbers because the digits of a number are hole numbers betwen 0 and 9 so $h(x)$ is not surjective or bijective
+    \item Lets find the function minimum. $q'(n)=(n^2-n)'=2n-1$ so the minimum is at point $n=0.5$ so if we compute the adiacent point $q(0)=0$, $q(1)=0$ so is not injective. \\
+    Second method $n^2-n=n(n-1)=0 \Rightarrow \begin{cases}  
+  n &= 0 \\
+  n&= 1
+\end{cases}$ and because we have 2 solutions it is not injective.
+It is neigher surjective or bijective because $q(2)=2$ and $q(3)=6$ but $q(n) = 3 \Rightarrow n=\frac{1\pm\sqrt{13}}{2}$ and $n\not\in \mathbb{Z}$
+\item
+    $r(n_1) = r(n_2) \Rightarrow \frac{1}{n_1} = \frac{1}{n_2} \Rightarrow n_1 = n_2$ so it maps distinct elements to distinct outputs, which means is injective.\\
+    For $q = 2 \in \mathbb{Q}^+$, $r(n) = 2 \Rightarrow \frac{1}{n} = 2 \Rightarrow n = 0.5 \not\in \mathbb{N}^+$ (also $2/3 \in \mathbb{Q}^+$ has no integer pre-image) wich means is not surjective and bijective.
+
+\end{enumerate}
+
+\section*{Problem 1.9}
+
+\begin{enumerate}[label=\alph*)]
+
+    \item \textbf{Finite.}
+    
+    By the Fundamental Theorem of Algebra, a polynomial equation of degree
+    $5$ has at most $5$ roots in $\mathbb{C}$. Therefore, the set of
+    solutions is finite.
+
+    \item \textbf{Countably infinite.}
+    
+    The set is
+    \[
+    S = \{n^2 \mid n \in \mathbb{N}\}.
+    \]
+    The function $f(n) = n^2$ defines a bijection
+    $f:\mathbb{N}\to S$. Therefore, $S$ is countably infinite.
+
+    \item \textbf{Uncountable.}
+    
+    $\mathbb{C}$ is in bijection with $\mathbb{R}^2$. Since $\mathbb{R}$
+    is uncountable, $\mathbb{R}^2$ is also uncountable. Therefore,
+    $\mathbb{C}$ is uncountable.
+
+    \item \textbf{Finite.}
+    
+    Regardless of the actual number of Romanian words, every word of
+    length at most $10$ can be formed using the finite alphabet of
+    $31$ letters. Thus, the total number of possible strings of length
+    at most $10$ is bounded by
+    \[
+    \sum_{k=1}^{10} 31^k < \infty.
+    \]
+    Therefore, the set of Romanian words with no more than $10$ letters
+    is finite.
+
+    \item \textbf{Depends on the sets $A$ and $B$.}
+    
+    \begin{itemize}
+        \item If $|A| \neq |B|$, then there are no bijections from $A$
+        to $B$, so the set of bijections is empty and therefore finite.
+
+        \item If $A$ and $B$ are finite with $|A| = |B| = n$, then there
+        are exactly $n!$ bijections, so the set is finite.
+
+        \item If $A$ and $B$ are infinite with $|A| = |B|$, then the set
+        of bijections is uncountable.
+    \end{itemize}
+
+    \item \textbf{Uncountable.}
+    
+    Since $B \subseteq A \cup B$ and $B$ is uncountable, the set
+    $A \cup B$ must also be uncountable.
+
+    \item \textbf{Uncountable.}
+    
+    Lines with a fixed slope $a$ are given by
+    \[
+    y = ax + b,
+    \]
+    where $b \in \mathbb{R}$. Each such line is uniquely determined by
+    its intercept $b$, giving a bijection with $\mathbb{R}$. Therefore,
+    the set of all lines with the same slope is uncountable.
+
+    \item \textbf{Countably infinite.}
+    
+    Every English word can be represented as a finite string over a
+    finite alphabet. The set of all finite strings over a finite alphabet
+    is countably infinite. Therefore, the set of all English words is
+    countably infinite.
+
+    \item \textbf{Uncountable.}
+    
+    Every circle in $\mathbb{R}^2$ is uniquely determined by its center
+    $(x_0,y_0) \in \mathbb{R}^2$ and its positive radius $r \in \mathbb{R}^+$.
+    Since $\mathbb{R}^2 \times \mathbb{R}^+$ is uncountable, the set of
+    all circles is uncountable.
+
+    \item \textbf{Finite.}
+    
+    The set contains exactly
+    \[
+    2^{10^{10}}
+    \]
+    elements, which is a fixed finite integer. Therefore, the set is
+    finite.
+
+    \item \textbf{Countably infinite.}
+    
+    The set of all finite bit strings is
+    \[
+    \{0,1\}^* = \bigcup_{n=0}^{\infty} \{0,1\}^n.
+    \]
+    Each set $\{0,1\}^n$ is finite, and a countable union of finite sets
+    is countable. Since there are infinitely many finite bit strings,
+    the set is countably infinite.
+
+\end{enumerate}
+
+
+\section*{Problem 1.10}
+
+\begin{enumerate}[label=\alph*)]
+
+    \item \textbf{Finite.}
+    
+    Let
+    \[
+    A = [0,1], \qquad B = [1,2].
+    \]
+    Both $A$ and $B$ are uncountable intervals in $\mathbb{R}$.
+    However,
+    \[
+    A \cap B = \{1\},
+    \]
+    which is finite.
+
+    \item \textbf{Countably infinite.}
+    
+    Let
+    \[
+    A = (0,1) \cup \mathbb{Z}, \qquad
+    B = (2,3) \cup \mathbb{Z}.
+    \]
+    Both $A$ and $B$ are uncountable. Their intersection is
+    \[
+    A \cap B = \mathbb{Z},
+    \]
+    which is countably infinite.
+
+    \item \textbf{Uncountable.}
+    
+    Let
+    \[
+    A = [0,2], \qquad B = [1,3].
+    \]
+    Both $A$ and $B$ are uncountable. Their intersection is
+    \[
+    A \cap B = [1,2],
+    \]
+    which is an interval in $\mathbb{R}$ and therefore uncountable.
+
+\end{enumerate}
+
+
+\section*{Problem 1.11}
+
+Assume by contradiction that $\mathbb{N}^{\infty}$ is countable. Then its
+elements can be enumerated in a list
+$S_1,S_2,S_3,\dots$, where each $S_i$ is an infinite sequence of
+non-negative integers:
+
+\begin{align*}
+S_1 &= (s_{1,1},\,s_{1,2},\,s_{1,3},\,\dots) \\
+S_2 &= (s_{2,1},\,s_{2,2},\,s_{2,3},\,\dots) \\
+S_3 &= (s_{3,1},\,s_{3,2},\,s_{3,3},\,\dots) \\
+&\;\vdots
+\end{align*}
+
+We construct a sequence
+\[
+D = (d_1,d_2,d_3,\dots)
+\]
+and define each term by
+\[
+d_k = s_{k,k} + 1
+\qquad \text{for all } k \geq 1.
+\]
+
+Since $s_{k,k} \in \mathbb{N}$, it follows that $d_k \in \mathbb{N}$
+for all $k \geq 1$. Thus,
+\[
+D \in \mathbb{N}^{\infty}.
+\]
+
+However, $D$ differs from $S_k$ at the $k$-th entry, since
+\[
+d_k = s_{k,k} + 1 \neq s_{k,k}.
+\]
+Therefore,
+\[
+D \neq S_k
+\]
+for every $k \geq 1$. Consequently, $D$ is not in the enumeration.
+
+This contradicts the assumption that the list contains all elements of
+$\mathbb{N}^{\infty}$. Therefore, $\mathbb{N}^{\infty}$ is uncountable.
+
+\end{document}
