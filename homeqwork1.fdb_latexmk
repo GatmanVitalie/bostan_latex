@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1788844688.10201 "c:/Users/gatma/Desktop/bostan_latex/homeqwork1.tex" "homeqwork1.pdf" "homeqwork1" 1788844690.75426 0
-  "c:/Users/gatma/Desktop/bostan_latex/homeqwork1.tex" 1788844686 19238 e6d9bfafcec8afe0d74517d044066129 ""
+["pdflatex"] 1788844704.2411 "c:/Users/gatma/Desktop/bostan_latex/homeqwork1.tex" "homeqwork1.pdf" "homeqwork1" 1788844707.17976 0
+  "c:/Users/gatma/Desktop/bostan_latex/homeqwork1.tex" 1788844703 19238 c2911f7cb0c00b00d9bd0542a6bac3ca ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1760895202 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1760895202 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1760896963 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -242,9 +242,9 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1760904351 5574153 af86687748baf417d9e7d549313527be ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1760904647 3629009 a5bc2956e3dedd8e18e7dd1170dc2100 ""
   "c:/texlive/2025/texmf.cnf" 1760904319 713 614551405fc44b98efbf516466e3c909 ""
-  "homeqwork1.aux" 1788844690 163 62caa2a276925a140dfb5a09f5283243 "pdflatex"
-  "homeqwork1.out" 1788844689 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "homeqwork1.tex" 1788844686 19238 e6d9bfafcec8afe0d74517d044066129 ""
+  "homeqwork1.aux" 1788844706 163 62caa2a276925a140dfb5a09f5283243 "pdflatex"
+  "homeqwork1.out" 1788844706 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "homeqwork1.tex" 1788844703 19238 c2911f7cb0c00b00d9bd0542a6bac3ca ""
   "ornament_6.pdf" 1788702663 6324 3ca5441aba82b68480d2d4572c5357d1 ""
   (generated)
   "homeqwork1.aux"
