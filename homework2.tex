@@ -1,0 +1,470 @@
+\documentclass[12pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx} % Required for \includegraphics
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{autobreak}
+\usepackage{amsmath}
+\usepackage{breqn}
+
+\usepackage{amsmath,amssymb}
+\usepackage{parskip}       % Correct paragraph spacing
+\usepackage{xcolor}        % Required for \textcolor command
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{pgfplotstable}
+\usepackage{siunitx}
+\usepackage{geometry}
+
+\setlist{nosep}           % Reduce vertical spacing in lists
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % sau ultima versiune instalată la tine
+\usepackage{filecontents} % dacă 
+% --- Page Setup ---
+\geometry{a4paper, margin=1in, top=1.2in, headheight=35pt} % Expanded top margin & headheight for the ornament
+
+\lstset{
+    language=python,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{blue!5},
+    keywordstyle=\color{purple!80!blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red!70!black},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=15pt,
+    frame=shadowbox,
+    rulesepcolor=\color{blue!20},
+    frameround=tttt,
+    breaklines=true,
+    captionpos=b,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=20pt,
+    xrightmargin=5pt
+}
+
+\usepackage[table]{xcolor}
+\definecolor{truegreen}{RGB}{144,238,144}
+\definecolor{falsered}{RGB}{250,128,114}
+\newcommand{\T}{\cellcolor{truegreen}T}
+\newcommand{\F}{\cellcolor{falsered}F}
+
+% --- Header & Footer Configuration ---
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+
+% Center the ornament in the header (antet)
+\chead{\includegraphics[width=4cm]{ornament_6.pdf}}
+
+% Center the page number in the footer
+\cfoot{\thepage}
+
+% Optional: Remove the default rule line below the header
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{fancy} % Force header/footer onto the title page
+    \centering
+    
+    \vspace*{4cm}
+
+    % Main Title
+    {\Huge \bfseries Homework 2}
+
+    \vspace{4cm}
+
+    % Name and Date
+    {\Large \textbf{Name:} Gatman Vitalie} \\[0.5em]
+    {\Large \textbf{Date:} \today} \\[0.5em]
+    {\Large \textbf{Group:} FAF-263}
+
+    \vfill
+\end{titlepage}
+
+\newpage
+
+% Page 2 content...
+\section*{Problem 2.1}
+\begin{proof}
+Contrapositive: if $r^{1/5}$ is rational, then $r$ is rational.
+Assume that $r^{1/5}$ is rational. Then there exist $m,n \in \mathbb{N}$ with
+\[
+r^{1/5} = \frac{m}{n}.
+\]
+Therefore,
+\[
+r = \left(r^{1/5}\right)^5 = \left(\frac{m}{n}\right)^5,
+\]
+which is rational. Thus, the contrapositive is true, and consequently, if $r$ is irrational, then $r^{1/5}$ is irrational.
+\end{proof}
+
+
+\section*{Problem 2.2}
+{
+    Prove by contradiction that $\log_3{18}$ is irrational.
+
+    \begin{proof}
+        \[
+            \log_3{18}=\log_3{(2\times9)}=\log_3{2}+\log_3{9}=2+\log_3{2}
+        \]
+        2 in clearly rational, we have to prove by contradiction that $\log_3{2}$ is irational because the adition of a rational and irational number is irational
+        \[
+            \log_3{2}=\frac{m}{n}\;\;\;\;n,m\in \mathbb{N}
+        \]
+        \[
+            n\log_3{2}=m
+        \]
+        \[
+            3^{n\log_3{2}}=3^{m}
+        \]
+        \[
+            2^n=3^{m}
+        \]
+        2 is even and an even number raised to the power of any natural number is allwys even and 3 is a odd number and a odd number raised to the power of any natural number is allways odd so we have $odd=even$ wich is false so by contradiction $\log_3{18}$ is irational
+    \end{proof}
+}
+
+\section*{Problem 2.3}
+Identify exactly where the bugs are in the following bogus proof:
+
+\noindent\textbf{Bogus Claim:} If $a$ and $b$ are two equal real numbers, then $a = 0$.
+
+\noindent\textbf{Proof:}
+\begin{align}
+a &= b \\
+a^2 &= ab \\
+a^2 - b^2 &= ab - b^2 \\
+\textcolor{red}{(a - b)}(a + b) &= \textcolor{red}{(a - b)}b \\
+a + b &= b \\
+a &= 0
+\end{align}
+Because $a=b \implies a-b = 0$ and dividing both sides by 0 on step 4 is iligal
+
+
+
+\section*{Problem 2.4}
+\[
+    \alpha \lor \beta \equiv \neg\alpha \rightarrow \beta
+\]
+\[
+    \alpha \land \beta \equiv \neg(\alpha \rightarrow \neg\beta)
+\]
+\[
+    (\alpha \lor \beta) \land (\beta \rightarrow \alpha)
+    \equiv \neg\big((\alpha \lor \beta) \rightarrow \neg(\beta \rightarrow \alpha)\big)
+\]
+\[
+    (\alpha \lor \beta) \land (\beta \rightarrow \alpha)
+    \equiv \neg\big((\neg\alpha \rightarrow \beta) \rightarrow \neg(\beta \rightarrow \alpha)\big)
+\]
+
+\section*{Problem 2.5}
+\noindent\textbf{Legend:} \colorbox{truegreen}{\,T\,} = true, \quad \colorbox{falsered}{\,F\,} = false.
+ 
+\subsection*{a) $((A_1\wedge A_2)\to A_3)\to(A_1\vee A_2)$}
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{|c|c|c|c|c|c||c|}
+\hline
+$A_1$ & $A_2$ & $A_3$ & $A_1\wedge A_2$ & $(A_1\wedge A_2)\to A_3$ & $A_1\vee A_2$ & \textbf{Result} \\ \hline
+\T & \T & \T & \T & \T & \T & \T \\
+\T & \T & \F & \T & \F & \T & \T \\
+\T & \F & \T & \F & \T & \T & \T \\
+\T & \F & \F & \F & \T & \T & \T \\
+\F & \T & \T & \F & \T & \T & \T \\
+\F & \T & \F & \F & \T & \T & \T \\
+\F & \F & \T & \F & \T & \F & \F \\
+\F & \F & \F & \F & \T & \F & \F \\
+\hline
+\end{tabular}
+\end{center}
+ 
+\subsection*{b) $(\neg A_5\to A_2)\to(A_5\wedge A_2)$}
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{|c|c|c|c|c||c|}
+\hline
+$A_5$ & $A_2$ & $\neg A_5$ & $\neg A_5\to A_2$ & $A_5\wedge A_2$ & \textbf{Result} \\ \hline
+\T & \T & \F & \T & \T & \T \\
+\T & \F & \F & \T & \F & \F \\
+\F & \T & \T & \T & \F & \F \\
+\F & \F & \T & \F & \F & \T \\
+\hline
+\end{tabular}
+\end{center}
+ 
+\newpage
+\subsection*{c) $(A_1\wedge A_2\to A_3\wedge A_4)\longleftrightarrow(\neg(A_1\vee A_3)\to\neg(A_2\vee A_4))$}
+\noindent Precedence: $\neg > \wedge > \vee > \to > \leftrightarrow$, so the left side reads
+$((A_1\wedge A_2)\to(A_3\wedge A_4))$. Let \textbf{L} be the left side of $\leftrightarrow$ and \textbf{R} the right side.
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c||c|}
+\hline
+$A_1$ & $A_2$ & $A_3$ & $A_4$ & $A_1\wedge A_2$ & $A_3\wedge A_4$ & \textbf{L} & $\neg(A_1\vee A_3)$ & $\neg(A_2\vee A_4)$ & \textbf{R} & \textbf{L}$\leftrightarrow$\textbf{R} \\ \hline
+\T & \T & \T & \T & \T & \T & \T & \F & \F & \T & \T \\
+\T & \T & \T & \F & \T & \F & \F & \F & \F & \T & \F \\
+\T & \T & \F & \T & \T & \F & \F & \F & \F & \T & \F \\
+\T & \T & \F & \F & \T & \F & \F & \F & \F & \T & \F \\
+\T & \F & \T & \T & \F & \T & \T & \F & \F & \T & \T \\
+\T & \F & \T & \F & \F & \F & \T & \F & \T & \T & \T \\
+\T & \F & \F & \T & \F & \F & \T & \F & \F & \T & \T \\
+\T & \F & \F & \F & \F & \F & \T & \F & \T & \T & \T \\
+\F & \T & \T & \T & \F & \T & \T & \F & \F & \T & \T \\
+\F & \T & \T & \F & \F & \F & \T & \F & \F & \T & \T \\
+\F & \T & \F & \T & \F & \F & \T & \T & \F & \F & \F \\
+\F & \T & \F & \F & \F & \F & \T & \T & \F & \F & \F \\
+\F & \F & \T & \T & \F & \T & \T & \F & \F & \T & \T \\
+\F & \F & \T & \F & \F & \F & \T & \F & \T & \T & \T \\
+\F & \F & \F & \T & \F & \F & \T & \T & \F & \F & \F \\
+\F & \F & \F & \F & \F & \F & \T & \T & \T & \T & \T \\
+\hline
+\end{tabular}
+\end{center}
+\section*{Problem 2.6}
+Since $(\beta \land \neg\beta)$ is a contradiction, its truth value is always false ($\text{F}$).
+
+\begin{itemize}
+    \item If $\alpha$ is true ($\text{T}$), then $\alpha \to (\beta \land \neg\beta) \equiv \text{T} \to \text{F} \equiv \text{F}$.
+    \item If $\alpha$ is false ($\text{F}$), then $\alpha \to (\beta \land \neg\beta) \equiv \text{F} \to \text{F} \equiv \text{T}$.
+\end{itemize}
+
+In both cases, $\alpha \to (\beta \land \neg\beta)$ yields the same truth value as $\neg\alpha$. Therefore, the two formulas are logically equivalent.
+
+
+\section*{Problem 2.7}
+\noindent Show that $(\alpha\to\beta)\lor(\beta\to\alpha)$ is a tautology.
+
+$(\alpha\to\beta)\lor(\beta\to\alpha)$ if false only when $(\alpha\to\beta)$ and 
+$(\beta\to\alpha)$ are false. For $(\alpha\to\beta)$ to be false $\alpha$ should be true 
+and  $\beta$ false but them $(\beta\to\alpha)$ would be true, and if  $(\beta\to\alpha)$ is false then $\beta$ shoudl be true and $\alpha$ false but again $(\alpha\to\beta)$  would become true so we proved that  $(\alpha\to\beta)\lor(\beta\to\alpha)$ is a tautology.
+\newpage
+\section*{Problem 2.8}
+Using De Morgan's laws:
+\[
+P \equiv (A \lor B) \to C \equiv \neg(A \lor B) \lor C \equiv (\neg A \land \neg B) \lor C
+\]
+Distributing $\lor C$:
+\[
+P \equiv (\neg A \lor C) \land (\neg B \lor C) \equiv (A \to C) \land (B \to C)
+\]
+
+We simplify $Q$ using contrapositives ($\neg C \to \neg X \equiv X \to C$):
+\[
+Q \equiv (\neg C \to \neg A) \lor (\neg C \to \neg B) \equiv (A \to C) \lor (B \to C)
+\]
+
+Since conjunction implies disjunction ($X \land Y \implies X \lor Y$), we have:
+\[
+((A \to C) \land (B \to C)) \implies ((A \to C) \lor (B \to C))
+\]
+Therefore, $P \to Q$ holds, but $P$ and $Q$ are not logically equivalent.
+
+The converse fails: take $A=\text{F}$, $B=\text{T}$, $C=\text{F}$. Then $A \to C$ is true,
+so $Q$ is true, but $B \to C$ is false, so $P$ is false. Hence $Q \not\to P$
+and $P \not\equiv Q$.
+
+\textbf{Answer:} \textbf{b) $P \to Q$.}
+ 
+
+\section*{Problem 2.9}
+\begin{enumerate}
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \item $D \rightarrow (B \land C)$
+    \item $C \rightarrow (\neg A \land \neg B)$
+    \item $D \leftrightarrow (C \land \neg A)$
+    \item $D \rightarrow (\neg C \rightarrow A)$
+    \item $(\neg D \rightarrow C) \land (D \rightarrow \neg B)$
+    \item $A \rightarrow ((\neg B \land \neg C) \rightarrow D)$
+    \item $((A \land B \land C) \leftrightarrow \neg D) \land ((\neg A \land \neg B) \rightarrow (D \rightarrow C))$
+\end{enumerate}
+
+\section*{Problem 2.10}
+\begin{align*}
+(\alpha \land \neg\beta) \to (\alpha \land \beta) &\equiv \neg(\alpha \land \neg\beta) \lor (\alpha \land \beta) && \text{(Conditional Law)} \\
+&\equiv (\neg\alpha \lor \beta) \lor (\alpha \land \beta) && \text{(De Morgan's Law)} \\
+&\equiv \neg\alpha \lor (\beta \lor (\beta \land \alpha)) && \text{(Associativity \& Commutativity)} \\
+&\equiv \neg\alpha \lor \beta && \text{(Absorption Law)}
+\end{align*}
+
+So $\neg \alpha\models (\alpha \land \neg\beta) \to (\alpha \land \beta)$ because $(\alpha \land \neg\beta) \to (\alpha \land \beta) \equiv \neg \alpha \lor\beta$ and $\neg\alpha \lor \beta$ is true if either $\neg\alpha$ or $\beta$ is true and when $\neg \alpha$ is true  $\neg\alpha \lor \beta$ is true regladles of $\beta$.
+\\
+\section*{Problem 2.11}
+
+\subsection*{1. Proof of Contrapositive Rule}
+We know that $(\alpha \to \beta) \equiv (\neg\beta \to \neg\alpha)$ and using logical equivalences:
+\begin{align*}
+\alpha \to \beta &\equiv \neg\alpha \lor \beta && \text{(Conditional Law)} \\
+&\equiv \beta \lor \neg\alpha && \text{(Commutativity)} \\
+&\equiv \neg(\neg\beta) \lor \neg\alpha && \text{(Double Negation)} \\
+&\equiv \neg\beta \to \neg\alpha && \text{(Conditional Law)}
+\end{align*}
+Because $\alpha \to \beta \equiv \neg\beta \to \neg\alpha$, the premise logically implies the conclusion:
+\[
+(\alpha \to \beta) \models (\neg\beta \to \neg\alpha)
+\]
+
+\subsection*{2. Proof of Composed Contrapositive Rule}
+\begin{align*}
+(\alpha \land \beta) \to \gamma 
+&\equiv \neg(\alpha \land \beta) \lor \gamma && \text{(Conditional Law)} \\
+&\equiv (\neg\alpha \lor \neg\beta) \lor \gamma && \text{(De Morgan's Law)} \\
+&\equiv \neg\alpha \lor (\neg\beta \lor \gamma) && \text{(Associativity)} \\
+&\equiv \neg\alpha \lor (\gamma \lor \neg\beta) && \text{(Commutativity)} \\
+&\equiv (\neg\alpha \lor \gamma) \lor \neg\beta && \text{(Associativity)} \\
+&\equiv \neg(\alpha \land \neg\gamma) \lor \neg\beta && \text{(De Morgan's Law: } \neg(A \land \neg B) \equiv \neg A \lor B\text{)} \\
+&\equiv (\alpha \land \neg\gamma) \to \neg\beta && \text{(Conditional Law)}
+\end{align*}
+
+Because $(\alpha \land \beta) \to \gamma \equiv (\alpha \land \neg\gamma) \to \neg\beta$, the deduction holds:
+\[
+((\alpha \land \beta) \to \gamma) \models ((\alpha \land \neg\gamma) \to \neg\beta)
+\]
+
+\section*{Problem 2.12}
+    \begin{enumerate}
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \item \textbf{No}. Socrates does not state what should hapen if he is not guilty
+    \item \textbf{Yes}.
+    \item \textbf{No}. He did not state explicitly that he should be punished only if he is guilty.
+\end{enumerate}
+
+\section*{Problem 2.13}
+Let the propositions be defined as:
+\begin{align*}
+S &: \text{Smith is the murderer.} \\
+L &: \text{Jones is lying.} \\
+V &: \text{Jones has seen Smith last night.} \\
+M &: \text{The murder happened after midnight.}
+\end{align*}
+\newpage
+The premises are formalized as:
+\begin{enumerate}
+    \item $P_1: \neg V \to (S \lor L)$
+    \item $P_2: \neg S \to (\neg V \land M)$
+    \item $P_3: M \to (S \lor L)$
+\end{enumerate}
+
+We test if $P_1 \land P_2 \land P_3 \models S$.
+
+Assume $S$ is false ($S \equiv \text{F}$). From $P_2$, since $\neg S \equiv \text{T}$, we obtain:
+\[
+\neg V \land M \equiv \text{T} \implies \neg V \equiv \text{T} \text{ and } M \equiv \text{T}.
+\]
+Substituting $M \equiv \text{T}$ into $P_3$ gives $M \to (S \lor L) \equiv \text{T} \to (\text{F} \lor L) \equiv L$. Thus, for $P_3$ to be true, $L$ must be true ($L \equiv \text{T}$).
+
+Evaluating $P_1$ under this assignment ($\neg V \equiv \text{T}, S \equiv \text{F}, L \equiv \text{T}$):
+\[
+\neg V \to (S \lor L) \equiv \text{T} \to (\text{F} \lor \text{T}) \equiv \text{T}.
+\]
+
+All premises $P_1, P_2, P_3$ evaluate to $\text{T}$ under the valuation $(S=\text{F}, L=\text{T}, V=\text{F}, M=\text{T})$. 
+
+\noindent\textbf{Conclusion:}
+The deduction is \textbf{invalid}. We cannot conclude that Smith is the murderer; we can only deduce that $S \lor L$ is true (either Smith is the murderer or Jones is lying). 
+
+\section*{Problem 2.14}
+\noindent Three boxes are presented. One contains gold, the other two are empty. Each box has a clue printed on it:
+\begin{itemize}
+    \item Box 1: ``The gold is not here''
+    \item Box 2: ``The gold is not here''
+    \item Box 3: ``The gold is in Box 2''
+\end{itemize}
+Only one clue is true; the other two are false. Which box has the gold?
+ 
+\subsection*{Formalization}
+Let the propositional variables be:
+\begin{itemize}
+    \item $G_1$: the gold is in Box 1.
+    \item $G_2$: the gold is in Box 2.
+    \item $G_3$: the gold is in Box 3.
+\end{itemize}
+The clues written on the boxes translate to:
+\begin{align*}
+C_1 &\equiv \neg G_1 && \text{(Box 1: ``the gold is not here'')}\\
+C_2 &\equiv \neg G_2 && \text{(Box 2: ``the gold is not here'')}\\
+C_3 &\equiv G_2 && \text{(Box 3: ``the gold is in Box 2'')}
+\end{align*}
+The problem's conditions are:
+\begin{enumerate}
+    \item Exactly one of $G_1, G_2, G_3$ is true (the gold is in exactly one box).
+    \item Exactly one of $C_1, C_2, C_3$ is true (only one clue is true).
+\end{enumerate}
+We must find the assignment of $G_1,G_2,G_3$ that satisfies both conditions.
+ 
+\subsection*{Truth table}
+\noindent\textbf{Legend:} \colorbox{truegreen}{\,T\,} = true, \quad \colorbox{falsered}{\,F\,} = false.
+ 
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|c|c|c|c||c|}
+\hline
+$G_1$ & $G_2$ & $G_3$ & $C_1=\neg G_1$ & $C_2=\neg G_2$ & $C_3=G_2$ & \shortstack{Exactly one\\box has gold} & \shortstack{Exactly one\\clue is true} & \textbf{Valid} \\ \hline
+\T & \T & \T & \F & \F & \T & \F & \T & \F \\
+\T & \T & \F & \F & \F & \T & \F & \T & \F \\
+\T & \F & \T & \F & \T & \F & \F & \T & \F \\
+\T & \F & \F & \F & \T & \F & \T & \T & \T \\
+\F & \T & \T & \T & \F & \T & \F & \F & \F \\
+\F & \T & \F & \T & \F & \T & \T & \F & \F \\
+\F & \F & \T & \T & \T & \F & \T & \F & \F \\
+\F & \F & \F & \T & \T & \F & \F & \F & \F \\
+\hline
+\end{tabular}
+\end{center}
+ 
+\subsection*{Solution}
+Scanning the table, the \textbf{Valid} column is true in exactly one row: $G_1 = T$, $G_2 = F$, $G_3 = F$. In that row, $C_1$ is false, $C_2$ is true, and $C_3$ is false, so exactly one clue (Box 2's) is true, as required, and exactly one box ($G_1$) contains the gold.
+ 
+\medskip
+\noindent\textbf{The gold is in Box 1.} \hfill $\blacksquare$
+
+\section*{Problem 2.15}
+
+\begin{enumerate}
+    \renewcommand{\labelenumi}{\alph{enumi})}
+    \item \textbf{Negation:} "There exists a prime number that is even"
+    
+    \item \textbf{Negation:} "There exists a computer program $P$ such that $P$ compiles without error messages and $P$ is not correct."
+    \item \textbf{Contrapositive:} "If a set is uncountable, then it is infinite."
+    \item \textbf{Contrapositive:} "If $p$ is even, then $p$ is not a prime number."
+    
+    \item \textbf{Converse:} "If you pass the exam, then you study hard."  
+    \item \textbf{Negation:} "All people study Discrete Math" (or "Everyone studies Discrete Math").
+    
+    \item \textbf{Negation:} $\exists x \in \mathbb{R}, \forall y \in \mathbb{Z}, (x + y < 0)$.\\
+    Proof: Let $x \in \mathbb{R}$ be arbitrary. Since the integers are unbounded above, there exists an integer $y$ such that
+$$y \ge -x.$$
+(For example $y = \lceil -x \rceil$ because the ceiling of $-x$, which is always an integer.)
+ 
+Adding $x$ to both sides of $y \ge -x$ gives
+$$x + y \ge x + (-x) = 0.$$
+ 
+
+Since $x \in \mathbb{R}$ was arbitrary, and for each such $x$ we exhibited an integer $y$ satisfying $x + y \ge 0$, it follows that
+$$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \forall x \in \mathbb{R}\ \exists y \in \mathbb{Z} \text{ such that } (x+y) \ge 0. \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\qquad \blacksquare$$
+
+    \item \textbf{Negation:} $\exists x \in \mathbb{R}$ such that $x(x + 1) > 0$ and $-1 \le x \le 0$.
+\end{enumerate}
+\end{document}

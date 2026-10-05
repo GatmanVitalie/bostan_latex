@@ -1,0 +1,376 @@
+\documentclass[12pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx} % Required for \includegraphics
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{autobreak}
+\usepackage{amsmath}
+\usepackage{breqn}
+
+\usepackage{amsmath,amssymb}
+\usepackage{parskip}       % Correct paragraph spacing
+\usepackage{xcolor}        % Required for \textcolor command
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{pgfplotstable}
+\usepackage{siunitx}
+\usepackage{geometry}
+
+\setlist{nosep}           % Reduce vertical spacing in lists
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % sau ultima versiune instalată la tine
+\usepackage{filecontents} % dacă 
+% --- Page Setup ---
+\geometry{a4paper, margin=1in, top=1.2in, headheight=35pt} % Expanded top margin & headheight for the ornament
+
+\lstset{
+    language=python,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{blue!5},
+    keywordstyle=\color{purple!80!blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red!70!black},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=15pt,
+    frame=shadowbox,
+    rulesepcolor=\color{blue!20},
+    frameround=tttt,
+    breaklines=true,
+    captionpos=b,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=20pt,
+    xrightmargin=5pt
+}
+
+\usepackage[table]{xcolor}
+\definecolor{truegreen}{RGB}{144,238,144}
+\definecolor{falsered}{RGB}{250,128,114}
+\newcommand{\T}{\cellcolor{truegreen}T}
+\newcommand{\F}{\cellcolor{falsered}F}
+
+% --- Header & Footer Configuration ---
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+
+% Center the ornament in the header (antet)
+\chead{\includegraphics[width=4cm]{ornament_6.pdf}}
+
+% Center the page number in the footer
+\cfoot{\thepage}
+
+% Optional: Remove the default rule line below the header
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{fancy} % Force header/footer onto the title page
+    \centering
+    
+    \vspace*{4cm}
+
+    % Main Title
+    {\Huge \bfseries Homework 3}
+
+    \vspace{4cm}
+
+    % Name and Date
+    {\Large \textbf{Name:} Gatman Vitalie} \\[0.5em]
+    {\Large \textbf{Date:} \today} \\[0.5em]
+    {\Large \textbf{Group:} FAF-263}
+
+    \vfill
+\end{titlepage}
+
+\newpage
+
+% Page 2 content...
+\section*{Problem 3.1}
+\begin{proof}
+\[S(n) \equiv  \sum_{k=1}^{n}{k^2}=\frac{n(n+1)(2n+1)}{6}, \;\;\;\; \forall n \in \mathbb{N}, n \ge 1\]
+Let us define $C(m)$ as 
+\[C(n)=\left\{n \in \mathbb{N}\;| \;\;\; \sum_{k=1}^{n}{k^2}\not=\frac{n(n+1)(2n+1)}{6}\right\}\]
+We asume $C(n)$ is not null so there should exist a least element n.\\
+We check $n=1$
+\[
+\begin{cases}
+    {
+\sum_{k=1}^{1}{k^2}=1^2=1}\\
+    {\frac{1(1+1)(2*1+1)}{6}=\frac{6}{6}=1}
+    
+
+\end{cases}
+\implies 1 \not\in C(n) \implies n>1
+\]
+There should exist a least element $n>1$ in $C(n)$ so $n-1 \not\in C(n)$ \\
+We prove that for some $n\in N^*$ the $S(n-1)+n^2=S(n)$ does not hold
+\[
+\begin{cases}
+    S(n-1) + n = \sum_{k=1}^{n-1}{k^2}=\frac{(n-1)(n)(2(n-1)+1)}{6} + n = \frac{2n^3-3x^2+x}{6}+n = \frac{2n^3+3n^2+n}{6}\\
+    S(n)=\sum_{k=1}^{n}{k^2}=\frac{n(n+1)(2n+1)}{6} = \frac{2n^3+3n^2+n}{6}
+\end{cases}
+\implies\]\[
+\implies S(n-1)+n^2=S(n)
+\]
+So $C = \varnothing$ and $S(n)$ holds for all $n \in \mathbb{N}, n \ge 1$
+\end{proof}
+
+
+\section*{Problem 3.2}
+\begin{enumerate}[label=\alph*)]
+    \item \begin{proof} Lets us define a set $S=\{5a+8b| \; a,b\in \mathbb{N}\}$\ we asume 12\$ is in $S$ and can be made from 5 and 8\$ gitf cards them we can write 12 as
+    $5a+8b=12$ and we check each posible combination:\\  
+    $12-8=6$, because $4 < 8$ and $4 < 5 $ so we cann't make 13\$ from one  8\$ card\\
+    $12-5=7$, because $7 < 8$ we are left with only 5 and $7-5=2$ so it cann't be made from 2 5\$ cards.
+    And because the sum cann't be negative and we proved that none of the posible combinations of 5 and 8\$ cards hold we proven that we cann't make 12\$ from 5\$ and 8\$ cards
+    \end{proof}
+
+    \item \begin{proof}
+Suppose, for contradiction, that some integer $n \ge 28$ is not formable. Then the set
+\[
+  C = \{\, n \in \mathbb{N} : n \ge 28 \text{ and } n \text{ is not formable} \,\}
+\]
+is a nonempty set of natural numbers. By the Well Ordering Principle, $C$ has a least element $m$. Since $m \ge 28$, we have two cases.
+
+\medskip
+\noindent\textbf{Case 1: $28 \le m \le 32$.} All elements are formatable:
+\begin{align*}
+  28 &= 4\cdot 5 + 1\cdot 8, \\
+  29 &= 1\cdot 5 + 3\cdot 8, \\
+  30 &= 6\cdot 5 + 0\cdot 8, \\
+  31 &= 3\cdot 5 + 2\cdot 8, \\
+  32 &= 0\cdot 5 + 4\cdot 8.
+\end{align*}
+
+
+\medskip
+
+\noindent\textbf{Case 2: $m \ge 33$.} Then $m - 5 \ge 28$. We can write $m - 5 = 5a + 8b\;\;\;\;\;a, b \ge 0$. Then
+\[
+  m = 5(a+1) + 8b,
+\]
+so $m$ is formable, contradicting $m \in C$.
+
+\medskip
+
+Both cases lead to a contradiction, so $C$ is empty. Therefore every amount $n \ge 28$ can be formed using \$5 and \$8 cards.
+\end{proof}
+
+\end{enumerate}
+
+\section*{Problem 3.3}
+
+
+\[
+1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \dots + \frac{1}{n^2} < 2 - \frac{1}{n}, \quad \forall n \in \mathbb{N}, \, n > 1.
+\]
+
+\begin{proof}
+Lets us define: $\displaystyle f(n)= \sum_{i=1}^{n} \frac{1}{i^2}$.
+
+\paragraph{1. Base case ($n = 2$):}
+For $n = 2$, if we evaluate both sides we get:
+\[
+\text{LHS} = f(2) = 1 + \frac{1}{4} = \frac{5}{4} = 1.25, \quad \text{RHS} = 2 - \frac{1}{2} = \frac{3}{2} = 1.5.
+\]
+Since $1.25 < 1.5$, the inequality holds true.
+
+\paragraph{2. We prove the induction}
+\[
+1 + \frac{1}{4} + \frac{1}{9} + \dots + \frac{1}{k^2} < 2 - \frac{1}{k}.
+\]
+\[
+1 + \frac{1}{4} + \dots + \frac{1}{k^2} + \frac{1}{(k+1)^2} < 2 - \frac{1}{k} + \frac{1}{(k+1)^2}.
+\]
+\[
+2 - \frac{1}{k} + \frac{1}{(k+1)^2} \le 2 - \frac{1}{k+1} \iff \frac{1}{(k+1)^2} \le \frac{1}{k} - \frac{1}{k+1}.
+\]
+\[
+\frac{1}{k} - \frac{1}{k+1} = \frac{(k+1) - k}{k(k+1)} = \frac{1}{k(k+1)}.
+\]
+\[
+\frac{1}{(k+1)^2} < \frac{1}{k(k+1)} = \frac{1}{k} - \frac{1}{k+1}.
+\]
+\[
+1 + \frac{1}{4} + \dots + \frac{1}{(k+1)^2} < 2 - \frac{1}{k} + \left(\frac{1}{k} - \frac{1}{k+1}\right) = 2 - \frac{1}{k+1}.
+\]
+\end{proof}
+\newpage
+\section*{Problem 3.4}
+\[
+F_1 + F_2 + F_3 + \dots + F_n = F_{n+2} - 1, \quad \forall n \in \mathbb{N}, \, n \ge 1.
+\]
+
+\begin{proof}
+From the definition of the Fibonacci sequence: $F_1 = 1$, $F_2 = 1$, and $F_k = F_{k-1} + F_{k-2}$ for all integers $k \ge 3$. 
+
+We define be the statement: $\displaystyle f(n) = \sum_{i=1}^{n} F_i = F_{n+2} - 1$.
+
+\paragraph{1. Base Case ($n = 1$):}
+For $n = 1$, if we evaluate both sides:
+\[
+\text{LHS} = f(1) = F_1 = 1, \quad \text{RHS} = F_{1+2} - 1 = F_3 - 1 = 2 - 1 = 1.
+\]
+Since $\text{LHS} = \text{RHS}$, the inequiality holds true.
+
+\paragraph{2. We prove the induction}
+\[
+F_1 + F_2 + F_3 + \dots + F_k = F_{k+2} - 1.
+\]
+\[
+F_1 + F_2 + \dots + F_k + F_{k+1} = F_{(k+1)+2} - 1 = F_{k+3} - 1.
+\]
+\begin{align*}
+\sum_{i=1}^{k+1} F_i &= \left( \sum_{i=1}^{k} F_i \right) + F_{k+1} \\
+&= (F_{k+2} - 1) + F_{k+1}  \\
+&= (F_{k+2} + F_{k+1}) - 1.
+\end{align*}
+We can rewrite $F_{k+3}$ as, $F_{k+3} = F_{k+2} + F_{k+1}$. Substituting this in:
+\[
+\sum_{i=1}^{k+1} F_i = F_{k+3} - 1.
+\]
+Thus the equality holds true.
+\end{proof}
+
+\section*{Problem 3.5}
+\begin{proof}
+\[4^n+7\le 5^n\]
+\paragraph{1. Base Case ($n = 2$):}
+For $n = 2$, we evaluate both sides:
+\[
+\text{LHS} = 4^2 + 7 = 16 + 7 = 23, \quad \text{RHS} = 5^2 = 25.
+\]
+Since $23 \le 25$, the equality holds true.
+
+\paragraph{2. We prove the induction}
+\[
+4^k + 7 \le 5^k.
+\]
+\begin{align*}
+4^{k+1} + 7 &= 4 \cdot 4^k + 7 \\
+&< 5 \cdot 4^k + 35 \quad \text{(since } 4 \cdot 4^k < 5 \cdot 4^k \text{ and } 7 < 35\text{)} \\
+&= 5(4^k + 7).
+\end{align*}
+\[
+5(4^k + 7) \le 5 \cdot (5^k) = 5^{k+1}.
+\]
+\[
+4^{k+1} + 7 \le 5^{k+1}.
+\]
+Thus, the inequality holds.
+\end{proof}
+\section*{Problem 3.6}
+
+A positive integer $n$ is called a \textbf{perfect number} if it is equal to the sum of its proper positive divisors.
+Prove by induction that if $2^k - 1$ is a prime number (a \textbf{Mersenne prime}), then $n = 2^{k-1}(2^k - 1)$ is an even perfect number.
+
+\begin{proof}
+Let $p = 2^k - 1$ be a Mersenne prime. Since $p$ is prime and $p > 1$, we must have $k \ge 2$, so $n = 2^{k-1}p$ is divisible by $2$ and is therefore even.
+
+The proper positive divisors of $n = 2^{k-1}p$ consist of:
+\begin{enumerate}
+    \item Divisors that are powers of 2: $1, 2, 2^2, \dots, 2^{k-1}$.
+    \item Divisors multiplied by $p$ (excluding $n$ itself): $p, 2p, 2^2p, \dots, 2^{k-2}p$.
+\end{enumerate}
+
+Thus, the sum of all proper positive divisors of $n$ is:
+\[
+S = \sum_{i=0}^{k-1} 2^i + p \sum_{i=0}^{k-2} 2^i.
+\]
+
+We first prove by induction that for any integer $m \ge 0$:
+\[
+g(m) = \sum_{i=0}^{m} 2^i = 2^{m+1} - 1.
+\]
+
+\paragraph{1. Base Case ($m = 0$):}
+For $m = 0$:
+\[
+\text{LHS} = g(0) = 2^0 = 1, \quad \text{RHS} = 2^{0+1} - 1 = 2 - 1 = 1.
+\]
+
+\paragraph{2. We prove the induction}
+\[
+\sum_{i=0}^{j+1} 2^i = \left(\sum_{i=0}^{j} 2^i\right) + 2^{j+1} = (2^{j+1} - 1) + 2^{j+1} = 2 \cdot 2^{j+1} - 1 = 2^{j+2} - 1.
+\]
+Thus, the sum formula holds for all $m \ge 0$.
+
+Using $g(k-1)$ and $g(k-2)$:
+\[
+\sum_{i=0}^{k-1} 2^i = 2^k - 1 = p, \quad \sum_{i=0}^{k-2} 2^i = 2^{k-1} - 1.
+\]
+\[
+S = p + p(2^{k-1} - 1) = p\left(1 + 2^{k-1} - 1\right) = p \cdot 2^{k-1} = n.
+\]
+Since the sum of the proper positive divisors of $n$ equals $n$, $n$ is a perfect number. Since $k \ge 2$, $n$ is an even perfect number.
+\end{proof}
+
+
+\section*{Problem 3.7}
+\begin{proof}
+    \[
+F_n < 2^n.
+\]
+\paragraph{1. Base Cases ($n = 1$ and $n = 2$):}
+For $n = 1$:
+\[
+\text{LHS} = F_1 = 1, \quad \text{RHS} = 2^1 = 2.
+\]
+Since $1 < 2$, the inequality holds true.
+
+\vspace{0.5em}
+\noindent For $n = 2$:
+\[
+\text{LHS} = F_2 = 1, \quad \text{RHS} = 2^2 = 4.
+\]
+Since $1 < 4$, the inequality holds true.
+
+\paragraph{2. We prove the induction}
+Assume by strong induction that $F_i < 2^i$ holds for all $1 \le i \le k$, where $k \ge 2$. We show that $F_{k+1} < 2^{k+1}$.
+
+By definition of the Fibonacci sequence:
+\[
+F_{k+1} = F_k + F_{k-1}.
+\]
+Applying the strong inductive hypothesis to $F_k$ and $F_{k-1}$ (since $1 \le k-1 < k$):
+\[
+F_k < 2^k \quad \text{and} \quad F_{k-1} < 2^{k-1}.
+\]
+Substituting these into the expression for $F_{k+1}$:
+\[
+F_{k+1} = F_k + F_{k-1} < 2^k + 2^{k-1}.
+\]
+Since $2^{k-1} < 2^k$ for all $k \ge 2$:
+\[
+2^k + 2^{k-1} < 2^k + 2^k = 2 \cdot 2^k = 2^{k+1}.
+\]
+Therefore:
+\[
+F_{k+1} < 2^{k+1}.
+\]
+Thus, the inequality holds.
+\end{proof}
+
+
+\end{document}
