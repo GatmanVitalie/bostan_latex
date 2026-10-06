@@ -1,12 +1,13 @@
 # Fdb version 4
-["pdflatex"] 1791266952.17974 "c:/Users/gatma/Desktop/bostan_latex/homework3.tex" "homework3.pdf" "homework3" 1791266955.05546 0
-  "c:/Users/gatma/Desktop/bostan_latex/homework3.tex" 1791266949.196 22924 a667371cb827aaeea12a8a2d1a55036a ""
+["pdflatex"] 1791267556.68296 "c:/Users/gatma/Desktop/bostan_latex/homework3.tex" "homework3.pdf" "homework3" 1791267559.67346 0
+  "c:/Users/gatma/Desktop/bostan_latex/homework3.tex" 1791267555.24638 23103 4735191f61177061a8b2967201882013 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1760895202.96094 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1760895202.96294 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1760896963.39378 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1760896191.32423 3584 402da0b29eafbad07963b1224b222f18 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm" 1760896191.32523 3584 ad49a18d8515beef6d92d4d3f197d0fd ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx2488.tfm" 1760896191.32623 3584 0181dbc4d429c3ba4e30feba37b5df96 ""
+  "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1760896191.36824 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm" 1760896191.36924 3584 f80ddd985bd00e29e9a6047ebd9d4781 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm" 1760896191.37024 3584 3c76ccb63eda935a68ba65ba9da29f1a ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm2488.tfm" 1760896191.37124 3584 406ad7b70d9a41f7833f92b6313150c8 ""
@@ -40,6 +41,7 @@
   "c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb" 1760895203.04647 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb" 1760895203.04747 139826 9213617a7cb78635fc326b859c0b2273 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb" 1760895203.04947 135938 299ac3a69892db3b7674a8b2543b0a77 ""
+  "c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb" 1760895203.19152 145929 f25e56369a345c4ff583b067cd87ce8e ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1760895203.19252 136101 f533469f523533d38317ab5729d00c8a ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb" 1760895203.19552 131438 3aa300b3e40e5c8ba7b4e5c6cebc5dd6 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb" 1760895203.32306 198221 ca5aa71411090ef358a6cc78b7458365 ""
@@ -234,8 +236,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1760904351 5574153 7f37683cdf7219a92bde5e5dd6b9f025 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1760904647 3629009 a0b93848d1cbf3a319950015cb080e83 ""
   "c:/texlive/2025/texmf.cnf" 1760904319.04707 713 baa45e065482d44c4cd81b98ef72c63b ""
-  "homework3.aux" 1791266954.62956 2940 985f7e2df9599ae536a1b7ba7b594c9b "pdflatex"
-  "homework3.out" 1791266954.16419 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "homework3.aux" 1791267559.20566 2940 efc9146f826a0dfbea00fa009b680d62 "pdflatex"
+  "homework3.out" 1791267558.67996 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "ornament_6.pdf" 1788702663.91841 6324 3ca5441aba82b68480d2d4572c5357d1 ""
   (generated)
   "homework3.aux"
