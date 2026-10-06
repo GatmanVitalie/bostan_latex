@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1791267556.68296 "c:/Users/gatma/Desktop/bostan_latex/homework3.tex" "homework3.pdf" "homework3" 1791267559.67346 0
-  "c:/Users/gatma/Desktop/bostan_latex/homework3.tex" 1791267555.24638 23103 4735191f61177061a8b2967201882013 ""
+["pdflatex"] 1791267850.0903 "c:/Users/gatma/Desktop/bostan_latex/homework3.tex" "homework3.pdf" "homework3" 1791267852.94729 0
+  "c:/Users/gatma/Desktop/bostan_latex/homework3.tex" 1791267845.6824 23120 ef9dd19b2a056ab10e8f3ef09d2cb916 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1760895202.96094 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1760895202.96294 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1760896963.39378 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -236,8 +236,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1760904351 5574153 7f37683cdf7219a92bde5e5dd6b9f025 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1760904647 3629009 a0b93848d1cbf3a319950015cb080e83 ""
   "c:/texlive/2025/texmf.cnf" 1760904319.04707 713 baa45e065482d44c4cd81b98ef72c63b ""
-  "homework3.aux" 1791267559.20566 2940 efc9146f826a0dfbea00fa009b680d62 "pdflatex"
-  "homework3.out" 1791267558.67996 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "homework3.aux" 1791267852.51398 2940 efc9146f826a0dfbea00fa009b680d62 "pdflatex"
+  "homework3.out" 1791267852.01902 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "ornament_6.pdf" 1788702663.91841 6324 3ca5441aba82b68480d2d4572c5357d1 ""
   (generated)
   "homework3.aux"
