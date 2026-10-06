@@ -109,7 +109,7 @@
 \section*{Problem 3.1}
 \begin{proof}
 \[S(n) \equiv  \sum_{k=1}^{n}{k^2}=\frac{n(n+1)(2n+1)}{6}, \;\;\;\; \forall n \in \mathbb{N}, n \ge 1\]
-Let us define $C(m)$ as 
+Let us define $C(n)$ as 
 \[C(n)=\left\{n \in \mathbb{N}\;| \;\;\; \sum_{k=1}^{n}{k^2}\not=\frac{n(n+1)(2n+1)}{6}\right\}\]
 We asume $C(n)$ is not null so there should exist a least element n.\\
 We check $n=1$
@@ -127,24 +127,46 @@ There should exist a least element $n>1$ in $C(n)$ so $n-1 \not\in C(n)$ \\
 We prove that for some $n\in N^*$ the $S(n-1)+n^2=S(n)$ does not hold
 \[
 \begin{cases}
-    S(n-1) + n = \sum_{k=1}^{n-1}{k^2}=\frac{(n-1)(n)(2(n-1)+1)}{6} + n = \frac{2n^3-3x^2+x}{6}+n = \frac{2n^3+3n^2+n}{6}\\
+    S(n-1) + n^2 = \sum_{k=1}^{n-1}{k^2}=\frac{(n-1)(n)(2(n-1)+1)}{6} + n^2 = \frac{2n^3-3n^2+n}{6}+n^2 = \frac{2n^3+3n^2+n}{6}\\
     S(n)=\sum_{k=1}^{n}{k^2}=\frac{n(n+1)(2n+1)}{6} = \frac{2n^3+3n^2+n}{6}
 \end{cases}
 \implies\]\[
 \implies S(n-1)+n^2=S(n)
 \]
-So $C = \varnothing$ and $S(n)$ holds for all $n \in \mathbb{N}, n \ge 1$
+So it holds for all $n\in \mathbb{N}^*$ wich means $C = \varnothing$ and by contradiction $S(n)$ holds for all $n \in \mathbb{N}^*$
 \end{proof}
 
 
 \section*{Problem 3.2}
 \begin{enumerate}[label=\alph*)]
-    \item \begin{proof} Lets us define a set $S=\{5a+8b| \; a,b\in \mathbb{N}\}$\ we asume 12\$ is in $S$ and can be made from 5 and 8\$ gitf cards them we can write 12 as
-    $5a+8b=12$ and we check each posible combination:\\  
-    $12-8=6$, because $4 < 8$ and $4 < 5 $ so we cann't make 13\$ from one  8\$ card\\
-    $12-5=7$, because $7 < 8$ we are left with only 5 and $7-5=2$ so it cann't be made from 2 5\$ cards.
-    And because the sum cann't be negative and we proved that none of the posible combinations of 5 and 8\$ cards hold we proven that we cann't make 12\$ from 5\$ and 8\$ cards
-    \end{proof}
+  \item\begin{proof}
+  Suppose, for contradiction, that the store owner is wrong, so \$12 can be made
+  from \$5 and \$8 cards. Define
+  \[
+    S=\{\, b\in\mathbb{N} \mid \exists\, a\in\mathbb{N} \text{ such that } 5a+8b=12 \,\}.
+  \]
+  This is the set of possible numbers of \$8 cards used in some way of making \$12.
+  By assumption $S$ is nonempty, and $S\subseteq\mathbb{N}$. By the Well Ordering
+  Principle, $S$ has a least element; call it $b_0$.
+
+  Becuase $b_0\in S$, there exists $a_0\in\mathbb{N}$ with
+  \[
+    5a_0+8b_0=12.
+  \]
+  We know that $5a_0\ge 0$, so $8b_0\le 12$ and $b_0\le 1$. Hence $b_0=0$
+  or $b_0=1$.
+
+  \begin{itemize}
+    \item If $b_0=0$, then $5a_0=12$, so $a_0=\tfrac{12}{5}\notin\mathbb{N}$,
+      a contradiction.
+    \item If $b_0=1$, then $5a_0=12-8=4$, so $a_0=\tfrac{4}{5}\notin\mathbb{N}$,
+      a contradiction.
+  \end{itemize}
+
+  Both cases are impossible, so $S$ must be empty, contradicting our assumption.
+  Therefore \$12 cannot be made using only \$5 and \$8 cards, and the store
+  owner is correct.
+\end{proof}
 
     \item \begin{proof}
 Suppose, for contradiction, that some integer $n \ge 28$ is not formable. Then the set
@@ -216,7 +238,6 @@ Since $1.25 < 1.5$, the inequality holds true.
 1 + \frac{1}{4} + \dots + \frac{1}{(k+1)^2} < 2 - \frac{1}{k} + \left(\frac{1}{k} - \frac{1}{k+1}\right) = 2 - \frac{1}{k+1}.
 \]
 \end{proof}
-\newpage
 \section*{Problem 3.4}
 \[
 F_1 + F_2 + F_3 + \dots + F_n = F_{n+2} - 1, \quad \forall n \in \mathbb{N}, \, n \ge 1.
@@ -252,7 +273,7 @@ We can rewrite $F_{k+3}$ as, $F_{k+3} = F_{k+2} + F_{k+1}$. Substituting this in
 \]
 Thus the equality holds true.
 \end{proof}
-
+\newpage
 \section*{Problem 3.5}
 \begin{proof}
 \[4^n+7\le 5^n\]
@@ -372,5 +393,283 @@ F_{k+1} < 2^{k+1}.
 Thus, the inequality holds.
 \end{proof}
 
+
+\section*{Problem 3.8}
+\begin{proof}
+Let $P(n)$ be the statement that an amount of $\$$ can be formed using natural number quantities of $5\$$ and $8\$$ cards: $n = 5a + 8b$ for some $a, b \in \mathbb{N}$.
+
+\paragraph{1. Base Cases ($n = 28, \,29, \,30,\, 31,\, 32$):}
+We evaluate $P(n)$ for five consecutive base values:
+\begin{itemize}
+    \item For $n = 28$: $28 = 5(4) + 8(1)$.
+    \item For $n = 29$: $29 = 5(1) + 8(3)$.
+    \item For $n = 30$: $30 = 5(6) + 8(0)$.
+    \item For $n = 31$: $31 = 5(3) + 8(2)$.
+    \item For $n = 32$: $32 = 5(0) + 8(4)$.
+\end{itemize}
+Because all are valide the base case is true.
+
+\paragraph{2. We prove the induction}
+We assume by strong induction that $P(i)$ is true for all $28 \le i \le k$, where $k \ge 32$. We prove that $P(k+1)$ is true.
+
+\[
+(k+1) - 5 = k - 4 \ge 28.
+\]
+Since $28 \le k - 4 \le k$, by the strong inductive hypothesis $P(k-4)$ holds true, so there exist $a', b' \in \mathbb{N}$ such that:
+\[
+k - 4 = 5a' + 8b'.
+\]
+Adding $\$5$ to both sides yields:
+\[
+k + 1 = (k - 4) + 5 = (5a' + 8b') + 5 = 5(a' + 1) + 8b'.
+\]
+Since $a' \ge 0 \implies a' + 1 \in \mathbb{N}$ and $b' \in \mathbb{N}$, this provides a valid construction for $\$(k+1)$ using $\$5$ and $\$8$ cards.
+
+Thus, $P(k+1)$ his true.\end{proof}
+
+
+\newpage
+\section*{Problem 3.9}
+
+\textbf{Flaw in the Proof:}
+
+The flaw in the bogus proof occurs in the \textbf{inductive step} when \(n = 0\).
+
+Specifically, the proof relies on the algebraic identity:
+\[
+a^{n+1} = \frac{a^n \cdot a^n}{a^{n-1}}
+\]
+and substitutes \(a^n = 1\) and \(a^{n-1} = 1\) using the induction hypothesis\\ \(P(n) : \forall k \le n, \, a^k = 1\).
+
+\paragraph{1. Invalid Exponent for \(n = 0\):}
+When \(n = 0\), the expression requires \(a^{n-1} = a^{-1}\):
+\[
+a^{0+1} = a^1 = \frac{a^0 \cdot a^0}{a^{-1}}
+\]
+The induction hypothesis \(P(0)\) only asserts that \(a^k = 1\) for non-negative integers \(k \le 0\) (i.e., \(k = 0\), giving \(a^0 = 1\)). It provides no information about \(k = -1\), because \(-1\) is not a non-negative integer (\(k \notin \mathbb{N}\)). Thus, substituting \(a^{-1} = 1\) is invalid.
+
+\paragraph{2. Breakdown of the Inductive Chain:}
+For \(a^{n-1} = 1\) to follow legitimately from the induction hypothesis \(P(n)\), \(n - 1\) must be a non-negative integer, which requires \(n \ge 1\). Consequently, \(P(0)\) cannot imply \(P(1)\). Since the transition from \(n = 0\) to \(n = 1\) fails, the entire inductive argument collapses.
+
+
+\section*{Problem 3.10}
+
+\begin{proof}
+Let \((x, y)\) denote Romeo's coordinates on the grid. We define the invariant quantity:
+\[
+I(x, y) = x + 2y \pmod 7.
+\]
+
+\paragraph{1. Initial State:}
+At Romeo's starting position \((0, 0)\), we evaluate the invariant:
+\[
+I(0, 0) = 0 + 2(0) = 0 \equiv 0 \pmod 7.
+\]
+
+\paragraph{2. Invariance under moves:}
+Suppose Romeo is at position \((x, y)\) such that \(x + 2y \equiv 0 \pmod 7\). Let \((x', y')\) be his new position after applying any of the four allowed moves:
+\begin{enumerate}
+    \item Move 1 \((+2, -1)\): \(x' + 2y' = (x + 2) + 2(y - 1) = x + 2y + 0 \equiv 0 \pmod 7\).
+    \item Move 2 \((-2, +1)\): \(x' + 2y' = (x - 2) + 2(y + 1) = x + 2y + 0 \equiv 0 \pmod 7\).
+    \item Move 3 \((+1, +3)\): \(x' + 2y' = (x + 1) + 2(y + 3) = x + 2y + 7 \equiv 0 \pmod 7\).
+    \item Move 4 \((-1, -3)\): \(x' + 2y' = (x - 1) + 2(y - 3) = x + 2y - 7 \equiv 0 \pmod 7\).
+\end{enumerate}
+In every case, \(x' + 2y' \equiv 0 \pmod 7\). By induction on the number of moves, any position reachable by Romeo must satisfy \(x + 2y \equiv 0 \pmod 7\).
+
+\paragraph{3. Target Evaluation:}
+For Julietta's position at \((1, 1)\), we have:
+\[
+1 + 2(1) = 3 \not\equiv 0 \pmod 7.
+\]
+Since \(3 \not\equiv 0 \pmod 7\), the point \((1, 1)\) does not satisfy the invariant. Therefore, Romeo will never be able to reach Julietta.
+\end{proof}
+
+
+
+\section*{Problem 3.11}
+\begin{proof}
+We write $(B, G, K)$ for the numbers of blue, green, and black chameleons,
+respectively, so the initial state is $(11, 13, 17)$.
+ 
+\paragraph{1. Invariant.}
+In any meeting of two chameleons of different colors, the two colors that
+meet each decrease by $1$ and the third color increases by $2$. For example,
+\[
+  \text{Blue \& Green meet:} \quad (B, G, K) \longmapsto (B-1,\; G-1,\; K+2).
+\]
+Thus each of $B, G, K$ changes by either $-1$ or $+2$ in every meeting. Since
+$-1 \equiv 2 \pmod 3$, all three counts change by the same residue modulo $3$.
+Therefore each of the differences
+\[
+  B - G, \qquad G - K, \qquad K - B
+\]
+is unchanged modulo $3$ by every meeting. Explicitly, in the example above,
+\begin{align*}
+  (B-1) - (G-1) &= B - G, \\
+  (G-1) - (K+2) &= (G - K) - 3 \equiv G - K \pmod 3, \\
+  (K+2) - (B-1) &= (K - B) + 3 \equiv K - B \pmod 3,
+\end{align*}
+and the other two types of meeting are identical up to relabeling colors.
+ 
+\paragraph{2. All blue and all black are impossible.}
+Initially,
+\[
+  B - G = 11 - 13 = -2 \equiv 1, \qquad
+  G - K = 13 - 17 = -4 \equiv 2, \qquad
+  K - B = 17 - 11 = 6 \equiv 0 \pmod 3.
+\]
+\begin{itemize}
+  \item \textbf{All blue}, $(41, 0, 0)$: here $G - K = 0$. By the invariant we
+  would need $G - K \equiv 0 \pmod 3$ initially, but $G - K \equiv 2 \pmod 3$.
+  Impossible.
+  \item \textbf{All black}, $(0, 0, 41)$: here $B - G = 0$. By the invariant we
+  would need $B - G \equiv 0 \pmod 3$ initially, but $B - G \equiv 1 \pmod 3$.
+  Impossible.
+\end{itemize}
+ 
+\paragraph{3. All green is achievable.}
+The invariant does not rule out $(0, 41, 0)$, since $K - B \equiv 0 \pmod 3$
+initially. In fact it can be reached:
+\begin{enumerate}
+  \item Let a black and a green chameleon meet, twice in succession:
+  \[
+    (11, 13, 17) \longrightarrow (13, 12, 16) \longrightarrow (15, 11, 15).
+  \]
+  \item Now $B = K = 15$. Let a blue and a black chameleon meet $15$ times.
+  Each meeting changes $(B, G, K)$ by $(-1, +2, -1)$, so the result is
+  \[
+    (15 - 15,\; 11 + 2 \cdot 15,\; 15 - 15) = (0, 41, 0).
+  \]
+\end{enumerate}
+ 
+Hence all blue and all black are impossible, while all green is achievable;
+in particular, the statement that no monochromatic state can be reached is
+false for the initial state $(11, 13, 17)$.
+\end{proof}
+ 
+
+\section*{Problem 3.12}
+
+\begin{proof}
+
+We analyze the number of black and white squares on the chessboard.
+
+\paragraph{1. Color Invariant:}
+
+Color the \(8\times8\) chessboard in the usual alternating pattern of
+black and white squares. Since the chessboard has an even number of
+squares in each row and column, opposite corners have the same color.
+
+Initially, the chessboard contains
+\[
+32 \text{ black squares} \qquad\text{and}\qquad 32 \text{ white squares}.
+\]
+
+Removing two opposite corners therefore removes two squares of the same
+color. Without loss of generality, suppose both removed squares are
+black. The remaining board then contains
+\[
+30 \text{ black squares} \qquad\text{and}\qquad 32 \text{ white squares}.
+\]
+
+\paragraph{2. Effect of a Domino:}
+
+A domino always covers two adjacent squares. Since adjacent squares on a
+chessboard have opposite colors, every domino covers exactly one black
+square and one white square.
+
+Therefore, if \(31\) dominoes were used, they would cover exactly
+\[
+31 \text{ black squares} \qquad\text{and}\qquad
+31 \text{ white squares}.
+\]
+
+\paragraph{3. Contradiction:}
+
+However, after removing the two opposite corners, the chessboard
+contains \(30\) black squares and \(32\) white squares. Thus, the
+numbers of black and white squares are not equal.
+
+Since every domino covers one square of each color, it is impossible for
+\(31\) dominoes to cover the remaining board.
+
+Therefore the chessboard cannot be tiled with 31 dominoes.
+
+\end{proof}
+
+
+\section*{Problem 3.13}
+\begin{proof}
+
+We define by \(n_L(w)\) the number of left brackets and by \(n_R(w)\) the number of right brackets in \(w\). We wish to prove that for all \(w \in BM\), \(n_L(w) = n_R(w)\).
+
+\paragraph{Base Case}
+For \(w = \lambda\), \(n_L(\lambda) = 0\) and \(n_R(\lambda) = 0\).
+Since \(0 = 0\), \(n_L(\lambda) = n_R(\lambda)\) holds.
+
+\paragraph{We prove the induction}
+Let \(w \in BM\) be generated by the constructor rule, so \(w = [s]t\) for some \(s, t \in BM\).\\
+We asume \(n_L(s) = n_R(s)\) and \(n_L(t) = n_R(t)\).\\
+By counting brackets in \(w = [s]t\):\\
+\begin{align*}
+n_L(w) &= 1 + n_L(s) + n_L(t) \\
+n_R(w) &= 1 + n_R(s) + n_R(t)
+\end{align*}
+Applying the induction hypothesis \(n_L(s) = n_R(s)\) and \(n_L(t) = n_R(t)\):
+\[
+n_L(w) = 1 + n_L(s) + n_L(t) = 1 + n_R(s) + n_R(t) = n_R(w).
+\]
+Thus, \(n_L(w) = n_R(w)\) holds for \(w = [s]t\).
+\end{proof}
+
+\section*{Problem 3.14}
+\begin{enumerate}[label=\alph*)]
+    \item $1/x$
+    \begin{enumerate}[label=\arabic*.]
+        \item $A=x$
+        \item $B=2^A=2^x$
+        \item $C=B^{-1}=\log_2{x}$
+        \item $D=2^{-1\times C} = 2^{-\log_{2}{x}}=\left(2^{\log_2{x}}\right)^{-1}=x^{-1}=\frac{1}{x}$
+    \end{enumerate}
+    \item We prove that $\tan(x)$ is in EF, them that $\frac{x-5}{x+5}$ is in EF 
+    \begin{enumerate}[label=\arabic*.]
+        \item $A=x$
+        \item $B=\frac{1}{x}$
+        \item $C=\sin(x)$
+        \item $D=AA=xx=x^2$
+        \item $E=C\circ\left(x+\frac{\pi}{2}\right)=\cos{x}$
+        \item $F=C \times B \circ E = \sin{x}\times\frac{1}{\cos{x}}=\tan{x}$
+        \item $G=(A-5) \times B \circ (A+5)=\frac{x-5}{x+5}$
+        \item $H=F \circ G = \tan {\left(\frac{x-5}{x+5}\right)}$
+    \end{enumerate}
+    \item $\ln{\left(x^2+1\right)}$
+    \begin{enumerate}[label=\arabic*.]
+        \item $A=x$
+        \item $B=\frac{1}{x}$
+        \item $C=\log_2{x}$
+        \item $D=AA=xx=x^2$ where $e=2.71\cdots$ and is the euler number
+        \item $E=C\circ A \times B\circ (C\circ e)=\log_2{x}\times \frac{1}{\log_2{e}}=\frac{\log_2{x}}{\log_2{e}}=\ln{x}$
+        \item $F=A\times A + 1 = x^2 + 1$
+        \item $H=E \circ F = \ln{\left(x^2+1\right)}$
+    \end{enumerate}
+    \item Proof by structural induction that if \(f \in EF\), then \(f' \in EF\).
+    \begin{enumerate}[label=\arabic*.]
+        \item \textbf{Base Cases:}
+        \begin{enumerate}[label=\roman*.]
+            \item \(f(x) = x \implies f'(x) = 1 \in EF\) (constant)
+            \item \(f(x) = c \implies f'(x) = 0 \in EF\) (constant)
+            \item \(f(x) = \sin(x) \implies f'(x) = \cos(x) \in EF\) (proven in part b)
+        \end{enumerate}
+        \item \textbf{Inductive Hypothesis:} WE assume \(f, g \in EF\) with \(f', g' \in EF\).
+        \item \textbf{Inductive Step:}
+        \begin{enumerate}[label=\roman*.]
+            \item \((f + g)' = f' + g' \in EF\) (sum rule)
+            \item \((fg)' = f' \times g + f \times g' \in EF\) (product rule)
+            \item \((2^g)' = 2^g \times g' \times \ln(2) \in EF\) (\(\ln(2) = \frac{1}{\log_2{e}} \in EF\) because is constant)
+            \item \((f^{-1})' = B \circ f' \circ f^{-1} \in EF\)  \(B(x) = \frac{1}{x} \in EF\) (provem in part a)
+            \item \((f \circ g)' = (f' \circ g) \times g' \in EF\) (chain rule)
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
 
 \end{document}
