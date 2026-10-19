@@ -1,0 +1,822 @@
+\documentclass[12pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{graphicx} % Required for \includegraphics
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{autobreak}
+\usepackage{amsmath}
+\usepackage{breqn}
+
+\usepackage{amsmath,amssymb}
+\usepackage{parskip}       % Correct paragraph spacing
+\usepackage{xcolor}        % Required for \textcolor command
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{pgfplotstable}
+\usepackage{siunitx}
+\usepackage{geometry}
+
+\setlist{nosep}           % Reduce vertical spacing in lists
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % sau ultima versiune instalată la tine
+\usepackage{filecontents} % dacă 
+% --- Page Setup ---
+\geometry{a4paper, margin=1in, top=1.2in, headheight=35pt} % Expanded top margin & headheight for the ornament
+
+\lstset{
+    language=C++,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{blue!5},
+    keywordstyle=\color{purple!80!blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red!70!black},
+    numberstyle=\tiny\color{gray},
+    numbers=left,
+    numbersep=15pt,
+    frame=shadowbox,
+    rulesepcolor=\color{blue!20},
+    frameround=tttt,
+    breaklines=true,
+    captionpos=b,
+    showstringspaces=false,
+    tabsize=4,
+    xleftmargin=20pt,
+    xrightmargin=5pt
+}
+
+% --- Header & Footer Configuration ---
+\pagestyle{fancy}
+\fancyhf{} % Clear default headers/footers
+
+% Center the ornament in the header (antet)
+\chead{\includegraphics[width=4cm]{ornament_6.pdf}}
+
+% Center the page number in the footer
+\cfoot{\thepage}
+
+% Optional: Remove the default rule line below the header
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+    \thispagestyle{fancy} % Force header/footer onto the title page
+    \centering
+    
+    \vspace*{4cm}
+
+    % Main Title
+    {\Huge \bfseries Homework 4}
+
+    \vspace{4cm}
+
+    % Name and Date
+    {\Large \textbf{Name:} Gatman Vitalie} \\[0.5em]
+    {\Large \textbf{Date:} \today} \\[0.5em]
+    {\Large \textbf{Group:} FAF-263}
+
+    \vfill
+\end{titlepage}
+
+\newpage
+
+% Page 2 content...
+\section*{Problem 4.1}
+
+\begin{enumerate}
+    \item I use Erastotene stiv to find all prime numbers up to $n$
+    \item Using a linear search i find the values of $p$ and $q$\\
+    \small{Note: Binary search would had ben faster with $O(n\log{n})$ time insted of $O(n^2)$ but for this problem is enough}
+    \item I compute the Totient $\phi(n)=(q-1)(p-1)$
+    \item I find the value $d$ via linear search
+    \item I compute the decrypted result using $m=c^d \mod n$ where $c$ is the inputed variable an $m$ is teh outputs
+    \item Result: $X = 20$, $Y=10$, $Z=11$
+    \item Code in C++:
+\end{enumerate}
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+// Expoenitnation
+long long modPow(long long base, long long exp, long long mod) {
+    long long res = 1;
+    base %= mod;
+    while (exp > 0) {
+        if (exp % 2 == 1) res = (res * base) % mod;
+        base = (base * base) % mod;
+        exp /= 2;
+    }
+    return res;
+}
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int e = 84733;
+    int n = 89951;
+
+    // Sieve of Eratosthenes
+    vector<bool> stiv(n + 1, false);
+    vector<int> primes;
+
+    for (int i = 2; i <= n; i++) {
+        if (!stiv[i]) {
+            primes.push_back(i);
+            for (int j = i * 2; j <= n; j += i) {
+                stiv[j] = true;
+            }
+        }
+    }
+
+    // Find prime factors p and q
+    long long p = 0, q = 0;
+    int len = primes.size();
+    for (int i = len - 1; i >= 0; i--) {
+        for (int j = 0; j < len; j++) {
+            long long prod = (long long)primes[i] * primes[j];
+            if (prod == n) {
+                p = primes[j];
+                q = primes[i];
+                i = -1; // break outer loop
+                break;
+            }
+            else if (prod > n) {
+                break;
+            }
+        }
+    }
+
+    long long phi = (p - 1) * (q - 1);
+
+    // Find private exponent d
+    long long d = -1;
+    for (long long i = 1; i <= phi; i++) {
+        if ((i * e) % phi == 1) {
+            d = i;
+            break;
+        }
+    }
+
+    long long c;
+    while (cin >> c) {
+        cout << modPow(c, d, n) << "\n";
+    }
+
+    return 0;
+}\end{lstlisting}
+
+
+\begin{enumerate}[label=\alph*)]
+
+    \item For $A = \{2,\,5\}$, we have
+    \[
+    2^A = \left\{
+    \varnothing,\,
+    \{2\},\,
+    \{5\},\,
+    \{2,\,5\}
+    \right\}.
+    \]
+
+    \item For $A = \{f,\,a,\,f\}$, we have
+    \[
+    2^A = \left\{
+    \varnothing,\,
+    \{f\},\,
+    \{a\},\,
+    \{f,\,a\}
+    \right\}.
+    \]
+    This is because sets cannot contain duplicate elements. Therefore,
+    \[
+    A = \{f,\,a,\,f\} = \{f,\,a\},
+    \]
+    so $2^A = 2^{\{f,\,a\}}$.
+
+    \item For $A = \{\varnothing,\,\{z\}\}$, we have
+    \[
+    2^A =
+    \left\{
+    \varnothing,\,
+    \{\varnothing\},\,
+    \{\{z\}\},\,
+    \{\varnothing,\,\{z\}\}
+    \right\}.
+    \]
+    This is because $A$ has two distinct elements, namely $\varnothing$
+    and $\{z\}$. Therefore, its power set contains all four possible
+    subsets of these two elements.
+
+\end{enumerate}
+
+To find the power set of the power set of $A$, $2^{2^A}$, we first compute
+$2^A$. We then treat $2^A$ as an ordinary set and compute its power set.
+For instance, in example (a), we have $A = \{2,\,5\}$. If we define
+$B = 2^A$, then
+
+\[
+B = \left\{
+\varnothing,\,
+\{2\},\,
+\{5\},\,
+\{2,\,5\}
+\right\}.
+\]
+
+Therefore,
+
+\[
+2^{2^A} = 2^B,
+\]
+
+which is simply the power set of $B$.
+\vspace{1cm}
+\subsection*{My code for iterating power sets}
+\begin{lstlisting}[language=python]
+from itertools import combinations
+
+def latex_element(element):
+    """Convert a single element to LaTeX."""
+
+    if element == EMPTY_SET:
+        return r"\varnothing"
+
+    if isinstance(element, str):
+        if element.strip() in {"\\varnothing"}:
+            return r"\varnothing"
+
+        replacements = {
+            "\\": r"\textbackslash{}",
+            "&": r"\&",
+            "%": r"\%",
+            "$": r"\$",
+            "#": r"\#",
+            "_": r"\_",
+            "{": r"\{",
+            "}": r"\}",
+        }
+
+        result = element
+        for old, new in replacements.items():
+            result = result.replace(old, new)
+
+        return r"\text{" + result + "}"
+
+    return str(element)
+
+
+def latex_set(s):
+    """Recursively convert a Python set/frozenset into LaTeX."""
+
+    if len(s) == 0:
+        return r"\varnothing"
+
+    elements = sorted(s, key=str)
+
+    formatted = []
+
+    for element in elements:
+
+        if isinstance(element, (set, frozenset)):
+            formatted.append(latex_set(element))
+
+        elif element == EMPTY_SET:
+            formatted.append(r"\varnothing")
+
+        else:
+            formatted.append(latex_element(element))
+
+    return r"\{" + r",\, ".join(formatted) + r"\}"
+
+
+# ---------- Power set ----------
+
+def power_set(s):
+    """Return the power set of s as a set of frozensets."""
+
+    elements = list(s)
+
+    return {
+        frozenset(combination)
+        for r in range(len(elements) + 1)
+        for combination in combinations(elements, r)
+    }
+
+
+# ---------- Input ----------
+
+EMPTY_SET = "__EMPTY_SET__"
+
+
+def parse_element(x):
+
+    x = x.strip()
+
+    if x in {"\\varnothing"}:
+        return EMPTY_SET
+
+    try:
+        return int(x)
+    except ValueError:
+        pass
+
+    try:
+        return float(x)
+    except ValueError:
+        pass
+
+    return x
+
+
+def main():
+
+    print("Power Set Generator")
+    print("--------------------")
+
+    raw = input(
+        "Enter the elements separated by commas "
+        "(example: 2, 5, hello, world):\n> "
+    )
+
+    elements = [parse_element(x) for x in raw.split(",")]
+
+    # Remove dopubles
+    original_set = frozenset(elements)
+
+    iterations = int(
+        input(
+            "\nNumber of iterations "
+            "(1 = P(A), 2 = P(P(A)), etc.):\n> "
+        )
+    )
+
+    filename = "powerset.tex"
+
+    if not filename:
+        filename = "power_set.tex"
+
+    if not filename.endswith(".tex"):
+        filename += ".tex"
+
+    current = original_set
+
+    for i in range(iterations):
+        current = power_set(current)
+
+        print(
+            f"Iteration {i + 1}: "
+            f"{len(current)} elements"
+        )
+
+    output = latex_set(current)
+
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(output)
+
+    print(f"\nDone!")
+    print(f"Result written to: {filename}")
+
+    if len(output) < 5000:
+        print("\nLaTeX output:")
+        print(output)
+    else:
+        print(
+            f"\nThe LaTeX output is {len(output):,} characters long."
+        )
+
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+
+\newpage
+
+
+\section*{Problem 4.3}
+By Bézout's Identity 
+\begin{enumerate}[label=\alph*)]
+    \item   
+    \begin{proof}
+Let $d=\gcd(a,b)=ax_0+by_0$ and $g=\gcd(ka,kb)$. Then $kd=ka\,x_0+kb\,y_0$, so $g\mid kd$.
+Also $d\mid a,\ d\mid b \Rightarrow kd\mid ka,\ kd\mid kb \Rightarrow kd\mid g$.
+Hence $g=kd$.
+\end{proof}
+\item
+\begin{proof}
+    \[\gcd(a, b) = ax_1+by_1 = 1\]
+    \[\gcd(a, c) = ax_2+cy_2 = 1\]
+    \[(ax_1+by_1)(ax_2+cy_2) = a^2x_1x_2+acx_1y_2+abx_2y_1+bcy_1y_2=a\underbrace{(ax_1x_2+cx_1y_2+bx_2y_1)}_{P} +bc\underbrace{(y_1y_2)}_{Q}\]
+    Because there exist a combination of integers $P$, $Q$ such that $aP+bcQ=1$ them $\gcd(a, bc)=1$
+    \end{proof}
+    \item\begin{proof}
+Let $ax+by=1$. Then $acx+bcy=c$. Since $a\mid ac$ and $a\mid bc$, we get $a\mid c$.
+\end{proof}
+
+\end{enumerate}
+
+
+\section*{Problem 4.4}
+\begin{enumerate}[label=\alph*)]
+    \item  $21\;|\;48 \implies s= 0, \; t=4$
+\item
+\begin{align*}
+    174 &= 3 \cdot 48 + 30 \\
+    48 &= 1 \cdot 30 + 18 \\
+    30 &= 1 \cdot 18 + 12 \\
+    18 &= 1 \cdot 12 + 6 \\
+    12 &= 2 \cdot 6 + 0 \\[1em]
+    6 &= 18 - 1 \cdot 12 \\
+    12 &= 30 - 1 \cdot 18 \\
+    18 &= 48 - 1 \cdot 30 \\
+    30 &= 174 - 3 \cdot 48 \\[1em]
+    6 &= 18 - 1 \cdot (30 - 1 \cdot 18) \\
+      &= 2 \cdot 18 - 1 \cdot 30 \\
+      &= 2 \cdot (48 - 1 \cdot 30) - 1 \cdot 30 \\
+      &= 2 \cdot 48 - 3 \cdot 30 \\
+      &= 2 \cdot 48 - 3 \cdot (174 - 3 \cdot 48) \\
+      &= 11 \cdot 48 - 3 \cdot 174 \\[1em]
+    s &= 11, \quad t = -3
+\end{align*}
+    \item 
+    \begin{align*}
+    296 &= 1 \cdot 232 + 64 \\
+    232 &= 3 \cdot 64 + 40 \\
+    64 &= 1 \cdot 40 + 24 \\
+    40 &= 1 \cdot 24 + 16 \\
+    24 &= 1 \cdot 16 + 8 \\
+    16 &= 2 \cdot 8 + 0 \\[1em]
+    8 &= 24 - 1 \cdot 16 \\
+    16 &= 40 - 1 \cdot 24 \\
+    24 &= 64 - 1 \cdot 40 \\
+    40 &= 232 - 3 \cdot 64 \\
+    64 &= 296 - 1 \cdot 232 \\[1em]
+    8 &= 24 - 1 \cdot (40 - 1 \cdot 24) \\
+      &= 2 \cdot 24 - 1 \cdot 40 \\
+      &= 2 \cdot (64 - 1 \cdot 40) - 1 \cdot 40 \\
+      &= 2 \cdot 64 - 3 \cdot 40 \\
+      &= 2 \cdot 64 - 3 \cdot (232 - 3 \cdot 64) \\
+      &= 11 \cdot 64 - 3 \cdot 232 \\
+      &= 11 \cdot (296 - 1 \cdot 232) - 3 \cdot 232 \\
+      &= 11 \cdot 296 - 14 \cdot 232 \\[1em]
+    s &= -14, \quad t = 11
+\end{align*}
+    
+\end{enumerate}
+
+\section*{Problem 4.6}
+because $m$ and $n$ are made allredy decomosed into primes we have to find the biges number composed of primes number that is divisible to both $m$ and $n$ wich will be 
+\\$\gcd(m,n)=2^{5}11^{8}19^{5}$ because we take the min power of the prime rom each number
+\section*{Problem 4.7}
+\begin{enumerate}[label=\alph*)]
+    \item \[[14]+[9]=[23 \mod 19] = [4]\]
+    \item \[[15]-[13]=[2]\]
+    \item \[[8]+[12]=[96\mod 19 = 1] = [1]\]
+    \item From part c) \[[12]^{-1}=[8]\]
+    \item From d)
+    \item\[[9][12]^{-1}=[9][8]=[72 \mod 19]=[15]\]
+    \item\[[15]-[18]^{-1}=[15]-[18]=[-3]=[19-3]=[16]\]
+\end{enumerate}
+\section*{Problem 4.8}
+\begin{enumerate}[label=\alph*)]
+    \item \[[14]+[9]=[23 \mod 20] = [3]\]
+\item \[[15]-[13]=[2]\]
+\item \[[8]\cdot[12]=[96 \bmod 20] = [16]\]
+\item \[\gcd(12, 20) = 4 \neq 1 \implies [12]^{-1} \text{ does not exist}\]
+\item \[\text{Since }[12]^{-1} \text{ does not exist, }[9][12]^{-1} \text{ is undefined}\]
+\item \[[15]-[18]^{-1}=[15]-[19]=[-4]=[20-4]=[16]\]
+\end{enumerate}
+
+\section*{Problem 4.9}
+\begin{enumerate}[label=\alph*)]
+    \item \[59=2*29+1\]
+    \[1=59+(-2)*29\]
+    \[-2+59=57\]
+    \[57\]
+    \item \[29^{-1} \equiv 29^{57} \;\;\;\;\; (\mod 59)\]
+    \[29^{57} \equiv 841^{29} \equiv 707,281^{15} \equiv 25^{15} \equiv 625^{8} \equiv 35^{8} \equiv 1225^{4} \equiv\]\[\equiv 45^{4} \equiv 2025^2 \equiv 16^2 \equiv 256 \equiv 20 \;\;\;\;\;\;\;\;\;\;(\bmod 59)\]
+    \item
+    \[29^{243}\bmod 13=(29 \mod 13)^{243}\mod13\]
+    By Fermat litle therem  
+    \[3^{12}\equiv 1\mod 13\]  
+    \[243=20*12+3\]
+    \[29^{243}\bmod13=3^3\bmod13=27\bmod13=1\]
+\end{enumerate}
+\section*{Problem 4.10}
+    \begin{align*}
+    \text{a)} & \quad \varphi(560) = \varphi(2^4 \cdot 5 \cdot 7) = 560 \cdot \frac{1}{2} \cdot \frac{4}{5} \cdot \frac{6}{7} = 192 \\
+    \text{b)} & \quad \varphi(675) = \varphi(3^3 \cdot 5^2) = 675 \cdot \frac{2}{3} \cdot \frac{4}{5} = 360 \\
+    \text{c)} & \quad \varphi(1720) = \varphi(2^3 \cdot 5 \cdot 43) = 1720 \cdot \frac{1}{2} \cdot \frac{4}{5} \cdot \frac{42}{43} = 672
+\end{align*}
+\section*{Problem 4.11}
+Commands:\\
+  A B        swap the letters A and B\\
+  lock A B T lock letters (shown in red, can't be swapped)\\
+  unlock     unlock all letters\\
+  reset      restore the original string (and unlock everything)\\
+  quit       exit\\
+> Y F\\
+YG LTEKTZL STFZ FGK TBETHZOGYQS LZXRTYZL FKGD LGFZVQKT TYUOYTTKOYU AYGVY QL FQF FKGD XZD\\
+> Q A\\
+YG LTEKTZL STFZ FGK TBETHZOGYAS LZXRTYZL FKGD LGFZVAKT TYUOYTTKOYU QYGVY AL FAF FKGD XZD\\
+> L T\\
+YG TLEKLZT SLFZ FGK LBELHZOGYAS TZXRLYZT FKGD TGFZVAKL LYUOYLLKOYU QYGVY AT FAF FKGD XZD\\
+> L E\\
+YG TELKEZT SEFZ FGK EBLEHZOGYAS TZXREYZT FKGD TGFZVAKE EYUOYEEKOYU QYGVY AT FAF FKGD XZD\\
+> Y I\\
+IG TELKEZT SEFZ FGK EBLEHZOGIAS TZXREIZT FKGD TGFZVAKE EIUOIEEKOIU QIGVI AT FAF FKGD XZD\\
+> U G\\
+IU TELKEZT SEFZ FUK EBLEHZOUIAS TZXREIZT FKUD TUFZVAKE EIGOIEEKOIG QIUVI AT FAF FKUD XZD\\
+> O E\\
+IU TOLKOZT SOFZ FUK OBLOHZEUIAS TZXROIZT FKUD TUFZVAKO OIGEIOOKEIG QIUVI AT FAF FKUD XZD\\
+> O E\\
+IU TELKEZT SEFZ FUK EBLEHZOUIAS TZXREIZT FKUD TUFZVAKE EIGOIEEKOIG QIUVI AT FAF FKUD XZD\\
+> I N\\
+NU TELKEZT SEFZ FUK EBLEHZOUNAS TZXRENZT FKUD TUFZVAKE ENGONEEKONG QNUVN AT FAF FKUD XZD\\
+> O E\\
+NU TOLKOZT SOFZ FUK OBLOHZEUNAS TZXRONZT FKUD TUFZVAKO ONGENOOKENG QNUVN AT FAF FKUD XZD\\
+> O I\\
+NU TILKIZT SIFZ FUK IBLIHZEUNAS TZXRINZT FKUD TUFZVAKI INGENIIKENG QNUVN AT FAF FKUD XZD\\
+> K R\\
+NU TILRIZT SIFZ FUR IBLIHZEUNAS TZXKINZT FRUD TUFZVARI INGENIIRENG QNUVN AT FAF FRUD XZD\\
+> E I\\
+NU TELREZT SEFZ FUR EBLEHZIUNAS TZXKENZT FRUD TUFZVARE ENGINEERING QNUVN AT FAF FRUD XZD\\
+> U O\\
+NO TELREZT SEFZ FOR EBLEHZIONAS TZXKENZT FROD TOFZVARE ENGINEERING QNOVN AT FAF FROD XZD\\
+> D M\\
+NO TELREZT SEFZ FOR EBLEHZIONAS TZXKENZT FROM TOFZVARE ENGINEERING QNOVN AT FAF FROM XZM\\
+> lock E N G I N E R I N G F A F F R O M\\
+NO TELREZT SEFZ FOR EBLEHZIONAS TZXKENZT FROM TOFZVARE ENGINEERING QNOVN AT FAF FROM XZM\\
+> X U\\
+NO TELREZT SEFZ FOR EBLEHZIONAS TZUKENZT FROM TOFZVARE ENGINEERING QNOVN AT FAF FROM UZM\\
+> Z T\\
+NO ZELRETZ SEFT FOR EBLEHTIONAS ZTUKENTZ FROM ZOFTVARE ENGINEERING QNOVN AZ FAF FROM UTM\\
+> Z S\\
+NO SELRETS ZEFT FOR EBLEHTIONAZ STUKENTS FROM SOFTVARE ENGINEERING QNOVN AS FAF FROM UTM\\
+> V W\\
+NO SELRETS ZEFT FOR EBLEHTIONAZ STUKENTS FROM SOFTWARE ENGINEERING QNOWN AS FAF FROM UTM\\
+> lock S T W\\
+NO SELRETS ZEFT FOR EBLEHTIONAZ STUKENTS FROM SOFTWARE ENGINEERING QNOWN AS FAF FROM UTM\\
+> Z L\\
+NO SEZRETS LEFT FOR EBZEHTIONAL STUKENTS FROM SOFTWARE ENGINEERING QNOWN AS FAF FROM UTM\\
+> K D\\
+NO SEZRETS LEFT FOR EBZEHTIONAL STUDENTS FROM SOFTWARE ENGINEERING QNOWN AS FAF FROM UTM\\
+> lock U D\\
+NO SEZRETS LEFT FOR EBZEHTIONAL STUDENTS FROM SOFTWARE ENGINEERING QNOWN AS FAF FROM UTM\\
+> Q K\\
+NO SEZRETS LEFT FOR EBZEHTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM\\
+> lock K\\
+NO SEZRETS LEFT FOR EBZEHTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM\\
+> H P\\
+NO SEZRETS LEFT FOR EBZEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM\\
+> B X\\
+NO SEZRETS LEFT FOR EXZEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM\\
+> Z C\\
+NO SECRETS LEFT FOR EXCEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM\\
+> lock C L X\\
+NO SECRETS LEFT FOR EXCEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM\\
+> quit \\\\\\\\
+
+\textbf{NO SECRETS LEFT FOR EXCEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM}
+
+\begin{lstlisting}[language=C++]
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+const string RED = "\033[31m";
+const string RESET_COLOR = "\033[0m";
+
+bool locked[256] = { false };
+
+// Print the string, showing locked letters in red
+void printString(const string& s) {
+    for (char c : s) {
+        if (locked[(unsigned char)c])
+            cout << RED << c << RESET_COLOR;
+        else
+            cout << c;
+    }
+    cout << endl;
+}
+
+void clearLocks() {
+    for (int i = 0; i < 256; i++) locked[i] = false;
+}
+
+int main() {
+    string original, current;
+
+    original = "FG LTEKTZL STYZ YGK TBETHZOGFQS LZXRTFZL YKGD LGYZVQKT TFUOFTTKOFU AFGVF QL YQY YKGD XZD";
+    current = original;
+
+    cout << "Commands:\n"
+        << "  A B        swap the letters A and B\n"
+        << "  lock A B T lock letters (shown in red, can't be swapped)\n"
+        << "  unlock     unlock all letters\n"
+        << "  reset      restore the original string (and unlock everything)\n"
+        << "  quit       exit\n";
+
+    string line;
+    while (cout << "> " && getline(cin, line)) {
+        istringstream iss(line);
+        string cmd;
+        if (!(iss >> cmd)) continue;
+
+        string lower = cmd;
+        for (char& c : lower) c = tolower((unsigned char)c);
+
+        if (lower == "quit") {
+            break;
+        }
+
+        if (lower == "reset") {
+            current = original;
+            clearLocks();
+            printString(current);
+            continue;
+        }
+
+        if (lower == "unlock") {
+            clearLocks();
+            printString(current);
+            continue;
+        }
+
+        if (lower == "lock") {
+            string letters;
+            while (iss >> letters) {
+                locked[(unsigned char)letters[0]] = true;
+            }
+            printString(current);
+            continue;
+        }
+
+        // Otherwise: swap command "A B"
+        string second;
+        if (!(iss >> second)) {
+            cout << "Please type two letters, e.g. A B\n";
+            continue;
+        }
+
+        char a = cmd[0], b = second[0];
+
+        if (locked[(unsigned char)a] || locked[(unsigned char)b]) {
+            cout << "Can't swap: "
+                << (locked[(unsigned char)a] ? a : b)
+                << " is locked.\n";
+            printString(current);
+            continue;
+        }
+
+        for (char& c : current) {
+            if (c == a)      c = b;
+            else if (c == b) c = a;
+        }
+
+        printString(current);
+    }
+
+    return 0;
+}
+\end{lstlisting}
+
+\section*{Problem 4.12}
+\textbf{ANONYMOUS FAF-24* ARE THE BEST}
+\begin{lstlisting}[language=C++]
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+bool isPrime(int n) {
+    if (n < 2) return false;
+    if (n % 2 == 0) return n == 2;
+    for (int d = 3; (long long)d * d <= n; d += 2)
+        if (n % d == 0) return false;
+    return true;
+}
+
+int digitSum(int n) {
+    int s = 0;
+    while (n > 0) { s += n % 10; n /= 10; }
+    return s;
+}
+
+
+string divide(const string& num, int d, int& rem) {
+    string q;
+    long long r = 0;
+    for (char ch : num) {
+        r = r * 10 + (ch - '0');
+        q += char('0' + r / d);
+        r %= d;
+    }
+    rem = (int)r;
+    size_t pos = q.find_first_not_of('0');
+    return pos == string::npos ? "0" : q.substr(pos);
+}
+
+char decodeChar(int code) {
+    if (code >= 1 && code <= 26) return char('A' + code - 1);
+    switch (code) {
+    case 27: return ' ';
+    case 28: return '*';
+    case 29: return ')';
+    case 30: return '?';
+    case 31: return ':';
+    case 32: return '(';
+    case 33: return '-';
+    case 34: return '+';
+    case 35: return '!';
+    case 36: return '1';
+    case 37: return '2';
+    case 38: return '3';
+    case 39: return '4';
+    case 40: return '5';
+    case 41: return '6';
+    case 42: return '7';
+    case 43: return '8';
+    case 44: return '9';
+    case 45: return '0';
+    }
+    return 0;
+}
+
+
+string decodeMessage(const string& digits, string& leftover) {
+    string best;
+    int bestValid = -1;
+    for (int offset = 0; offset < 2; ++offset) {
+        string s = (offset ? "0" : "") + digits;
+        string text;
+        int valid = 0;
+        for (size_t i = 0; i + 1 < s.size(); i += 2) {
+            int code = (s[i] - '0') * 10 + (s[i + 1] - '0');
+            char c = decodeChar(code);
+            if (c) { text += c; ++valid; }
+            else text += '#';
+        }
+        if (valid > bestValid) {
+            bestValid = valid;
+            best = text;
+            leftover = (s.size() % 2) ? string(1, s.back()) : "";
+        }
+    }
+    return best;
+}
+
+int main() {
+    const string cipher =
+        "11407962388511346587579855268553606923614846491959636902329539196087";
+
+    int largest = -1, key = -1;
+    string plainDigits;
+    for (int n = 999999; n >= 100000; --n) {
+        if (digitSum(n) != 38 || !isPrime(n)) continue;
+        if (largest < 0) largest = n;
+        int rem;
+        string q = divide(cipher, n, rem);
+        if (rem == 0) { key = n; plainDigits = q; break; }
+    }
+    if (key < 0) { cerr << "No key divides the ciphertext\n"; return 1; }
+
+    cout << "Cipher length                       : " << cipher.size() << " digits\n";
+    cout << "Largest 6-digit prime, digit sum 38 : " << largest << "\n";
+    cout << "Key that divides the ciphertext     : " << key << "\n\n";
+    cout << "Decrypted number (c / k):\n" << plainDigits << "\n\n";
+
+    string leftover;
+    string text = decodeMessage(plainDigits, leftover);
+    cout << "Decoded message:\n" << text << "\n";
+    if (!leftover.empty())
+        cout << "(one unpaired trailing digit: " << leftover << ")\n";
+    return 0;
+}
+\end{lstlisting}
+
+\end{document}
