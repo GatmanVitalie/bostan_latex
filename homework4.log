@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.19)  20 OCT 2026 00:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.19)  20 OCT 2026 09:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -885,7 +885,7 @@ l.155     long
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 232.
+Package pdftex.def Info: ornament_6.pdf  used on input line 192.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -894,13 +894,16 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
-[2] (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
+[2]
+Overfull \hbox (51.60104pt too wide) detected at line 208
+\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ax[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 by[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 ax[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 cy[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 a[]x[]x[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 acx[]y[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 abx[]y[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 bcy[]y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 a [] \OT1/cmr/m/n/12 +\OML/cmm/m/it/12 bc []
+ []
+
+
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 288.
+Package pdftex.def Info: ornament_6.pdf  used on input line 262.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -913,7 +916,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 336.
+Package pdftex.def Info: ornament_6.pdf  used on input line 276.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -926,7 +929,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 386.
+Package pdftex.def Info: ornament_6.pdf  used on input line 309.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -936,10 +939,65 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
 [5]
+Overfull \hbox (8.74214pt too wide) in paragraph at lines 311--378
+\T1/cmr/m/n/12 YG LTEK-TZL STFZ FGK TBETH-Z-O-GYQS LZXR-TYZL FKGD LGFZVQKT TYUOYT-
+ []
+
+
+Overfull \hbox (6.12337pt too wide) in paragraph at lines 311--378
+\T1/cmr/m/n/12 YG LTEK-TZL STFZ FGK TBETH-Z-O-GYAS LZXR-TYZL FKGD LGFZ-VAKT TYUOYT-
+ []
+
+
+Overfull \hbox (1.5467pt too wide) in paragraph at lines 311--378
+\T1/cmr/m/n/12 YG TLEK-LZT SLFZ FGK LBEL-H-Z-O-GYAS TZXR-LYZT FKGD TGFZ-VAKL LYUOYL-
+ []
+
+
+Overfull \hbox (21.92633pt too wide) in paragraph at lines 311--378
+\T1/cmr/m/n/12 IG TELKEZT SEFZ FGK EBLE-HZO-GIAS TZXREIZT FKGD TGFZ-VAKE EIUOIEEKOIU
+ []
+
+
+Overfull \hbox (21.34592pt too wide) in paragraph at lines 311--378
+\T1/cmr/m/n/12 IU TELKEZT SEFZ FUK EBLE-HZOUIAS TZXREIZT FKUD TUFZ-VAKE EIGOIEEKOIG
+ []
+
+
+Overfull \hbox (29.02866pt too wide) in paragraph at lines 311--378
+\T1/cmr/m/n/12 IU TOLKOZT SOFZ FUK OBLO-HZEUIAS TZXROIZT FKUD TUFZ-VAKO OIGEIOOKEIG
+ []
+
+
+Overfull \hbox (21.34592pt too wide) in paragraph at lines 311--378
+\T1/cmr/m/n/12 IU TELKEZT SEFZ FUK EBLE-HZOUIAS TZXREIZT FKUD TUFZ-VAKE EIGOIEEKOIG
+ []
+
+
+Overfull \hbox (56.43872pt too wide) in paragraph at lines 311--378
+\T1/cmr/m/n/12 NU TOLKOZT SOFZ FUK OBLO-HZE-U-NAS TZXRONZT FKUD TUFZ-VAKO ONGENOOKENG
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--378
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 311--378
+
+ []
+
+
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 415.
+Package pdftex.def Info: ornament_6.pdf  used on input line 378.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -949,15 +1007,10 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
 [6]
-Overfull \hbox (51.60104pt too wide) detected at line 431
-\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ax[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 by[]\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 ax[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 cy[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 a[]x[]x[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 acx[]y[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 abx[]y[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 bcy[]y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 a [] \OT1/cmr/m/n/12 +\OML/cmm/m/it/12 bc []
- []
-
-
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 485.
+Package pdftex.def Info: ornament_6.pdf  used on input line 378.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -967,10 +1020,15 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
 [7]
+Overfull \hbox (5.75658pt too wide) in paragraph at lines 379--380
+[]\T1/cmr/bx/n/12 NO SE-CRETS LEFT FOR EX-CEP-TIONAL STU-DENTS FROM SOFT-WARE
+ []
+
+
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 499.
+Package pdftex.def Info: ornament_6.pdf  used on input line 412.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -983,7 +1041,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 532.
+Package pdftex.def Info: ornament_6.pdf  used on input line 459.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -993,70 +1051,10 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
 [9]
-Overfull \hbox (8.74214pt too wide) in paragraph at lines 534--601
-\T1/cmr/m/n/12 YG LTEK-TZL STFZ FGK TBETH-Z-O-GYQS LZXR-TYZL FKGD LGFZVQKT TYUOYT-
- []
-
-
-Overfull \hbox (6.12337pt too wide) in paragraph at lines 534--601
-\T1/cmr/m/n/12 YG LTEK-TZL STFZ FGK TBETH-Z-O-GYAS LZXR-TYZL FKGD LGFZ-VAKT TYUOYT-
- []
-
-
-Overfull \hbox (1.5467pt too wide) in paragraph at lines 534--601
-\T1/cmr/m/n/12 YG TLEK-LZT SLFZ FGK LBEL-H-Z-O-GYAS TZXR-LYZT FKGD TGFZ-VAKL LYUOYL-
- []
-
-
-Overfull \hbox (21.92633pt too wide) in paragraph at lines 534--601
-\T1/cmr/m/n/12 IG TELKEZT SEFZ FGK EBLE-HZO-GIAS TZXREIZT FKGD TGFZ-VAKE EIUOIEEKOIU
- []
-
-
-Overfull \hbox (21.34592pt too wide) in paragraph at lines 534--601
-\T1/cmr/m/n/12 IU TELKEZT SEFZ FUK EBLE-HZOUIAS TZXREIZT FKUD TUFZ-VAKE EIGOIEEKOIG
- []
-
-
-Overfull \hbox (29.02866pt too wide) in paragraph at lines 534--601
-\T1/cmr/m/n/12 IU TOLKOZT SOFZ FUK OBLO-HZEUIAS TZXROIZT FKUD TUFZ-VAKO OIGEIOOKEIG
- []
-
-
-Overfull \hbox (21.34592pt too wide) in paragraph at lines 534--601
-\T1/cmr/m/n/12 IU TELKEZT SEFZ FUK EBLE-HZOUIAS TZXREIZT FKUD TUFZ-VAKE EIGOIEEKOIG
- []
-
-
-Overfull \hbox (56.43872pt too wide) in paragraph at lines 534--601
-\T1/cmr/m/n/12 NU TOLKOZT SOFZ FUK OBLO-HZE-U-NAS TZXRONZT FKUD TUFZ-VAKO ONGENOOKENG
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 534--601
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 534--601
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 534--601
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 534--601
-
- []
-
-
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 601.
+Package pdftex.def Info: ornament_6.pdf  used on input line 508.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -1069,7 +1067,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 601.
+Package pdftex.def Info: ornament_6.pdf  used on input line 557.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -1079,15 +1077,15 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
 [11]
-Overfull \hbox (5.75658pt too wide) in paragraph at lines 602--603
-[]\T1/cmr/bx/n/12 NO SE-CRETS LEFT FOR EX-CEP-TIONAL STU-DENTS FROM SOFT-WARE
+Overfull \hbox (108.07971pt too wide) in paragraph at lines 572--574
+[][][][] 
  []
 
 
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 634.
+Package pdftex.def Info: ornament_6.pdf  used on input line 600.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -1097,10 +1095,20 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
 [12]
+Underfull \hbox (badness 10000) in paragraph at lines 601--603
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 604--606
+
+ []
+
+
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 681.
+Package pdftex.def Info: ornament_6.pdf  used on input line 653.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -1113,7 +1121,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 731.
+Package pdftex.def Info: ornament_6.pdf  used on input line 699.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -1126,7 +1134,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 779.
+Package pdftex.def Info: ornament_6.pdf  used on input line 741.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -1136,15 +1144,10 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
 [15]
-Overfull \hbox (108.07971pt too wide) in paragraph at lines 795--797
-[][][][] 
- []
-
-
 
 File: ornament_6.pdf Graphic file (type pdf)
 <use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 820.
+Package pdftex.def Info: ornament_6.pdf  used on input line 748.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -1153,20 +1156,7 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
 
-[16]
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 822.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[17] (./homework4.aux)
+[16] (./homework4.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
@@ -1175,18 +1165,18 @@ Package rerunfilecheck Info: File `homework4.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39754 strings out of 467748
- 924807 string characters out of 5431137
- 1953541 words of memory out of 5000000
- 67375 multiletter control sequences out of 15000+600000
- 642934 words of font info for 77 fonts, out of 8000000 for 9000
+ 39520 strings out of 467748
+ 921841 string characters out of 5431137
+ 1936543 words of memory out of 5000000
+ 67192 multiletter control sequences out of 15000+600000
+ 641391 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,87p,762b,2832s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on homework4.pdf (18 pages, 374744 bytes).
+ 84i,15n,87p,762b,2820s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on homework4.pdf (17 pages, 360617 bytes).
 PDF statistics:
- 792 PDF objects out of 1000 (max. 8388607)
- 719 compressed objects within 8 object streams
- 502 named destinations out of 1000 (max. 500000)
+ 722 PDF objects out of 1000 (max. 8388607)
+ 655 compressed objects within 7 object streams
+ 455 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -189,229 +189,6 @@ int main() {
 }\end{lstlisting}
 
 
-\begin{enumerate}[label=\alph*)]
-
-    \item For $A = \{2,\,5\}$, we have
-    \[
-    2^A = \left\{
-    \varnothing,\,
-    \{2\},\,
-    \{5\},\,
-    \{2,\,5\}
-    \right\}.
-    \]
-
-    \item For $A = \{f,\,a,\,f\}$, we have
-    \[
-    2^A = \left\{
-    \varnothing,\,
-    \{f\},\,
-    \{a\},\,
-    \{f,\,a\}
-    \right\}.
-    \]
-    This is because sets cannot contain duplicate elements. Therefore,
-    \[
-    A = \{f,\,a,\,f\} = \{f,\,a\},
-    \]
-    so $2^A = 2^{\{f,\,a\}}$.
-
-    \item For $A = \{\varnothing,\,\{z\}\}$, we have
-    \[
-    2^A =
-    \left\{
-    \varnothing,\,
-    \{\varnothing\},\,
-    \{\{z\}\},\,
-    \{\varnothing,\,\{z\}\}
-    \right\}.
-    \]
-    This is because $A$ has two distinct elements, namely $\varnothing$
-    and $\{z\}$. Therefore, its power set contains all four possible
-    subsets of these two elements.
-
-\end{enumerate}
-
-To find the power set of the power set of $A$, $2^{2^A}$, we first compute
-$2^A$. We then treat $2^A$ as an ordinary set and compute its power set.
-For instance, in example (a), we have $A = \{2,\,5\}$. If we define
-$B = 2^A$, then
-
-\[
-B = \left\{
-\varnothing,\,
-\{2\},\,
-\{5\},\,
-\{2,\,5\}
-\right\}.
-\]
-
-Therefore,
-
-\[
-2^{2^A} = 2^B,
-\]
-
-which is simply the power set of $B$.
-\vspace{1cm}
-\subsection*{My code for iterating power sets}
-\begin{lstlisting}[language=python]
-from itertools import combinations
-
-def latex_element(element):
-    """Convert a single element to LaTeX."""
-
-    if element == EMPTY_SET:
-        return r"\varnothing"
-
-    if isinstance(element, str):
-        if element.strip() in {"\\varnothing"}:
-            return r"\varnothing"
-
-        replacements = {
-            "\\": r"\textbackslash{}",
-            "&": r"\&",
-            "%": r"\%",
-            "$": r"\$",
-            "#": r"\#",
-            "_": r"\_",
-            "{": r"\{",
-            "}": r"\}",
-        }
-
-        result = element
-        for old, new in replacements.items():
-            result = result.replace(old, new)
-
-        return r"\text{" + result + "}"
-
-    return str(element)
-
-
-def latex_set(s):
-    """Recursively convert a Python set/frozenset into LaTeX."""
-
-    if len(s) == 0:
-        return r"\varnothing"
-
-    elements = sorted(s, key=str)
-
-    formatted = []
-
-    for element in elements:
-
-        if isinstance(element, (set, frozenset)):
-            formatted.append(latex_set(element))
-
-        elif element == EMPTY_SET:
-            formatted.append(r"\varnothing")
-
-        else:
-            formatted.append(latex_element(element))
-
-    return r"\{" + r",\, ".join(formatted) + r"\}"
-
-
-# ---------- Power set ----------
-
-def power_set(s):
-    """Return the power set of s as a set of frozensets."""
-
-    elements = list(s)
-
-    return {
-        frozenset(combination)
-        for r in range(len(elements) + 1)
-        for combination in combinations(elements, r)
-    }
-
-
-# ---------- Input ----------
-
-EMPTY_SET = "__EMPTY_SET__"
-
-
-def parse_element(x):
-
-    x = x.strip()
-
-    if x in {"\\varnothing"}:
-        return EMPTY_SET
-
-    try:
-        return int(x)
-    except ValueError:
-        pass
-
-    try:
-        return float(x)
-    except ValueError:
-        pass
-
-    return x
-
-
-def main():
-
-    print("Power Set Generator")
-    print("--------------------")
-
-    raw = input(
-        "Enter the elements separated by commas "
-        "(example: 2, 5, hello, world):\n> "
-    )
-
-    elements = [parse_element(x) for x in raw.split(",")]
-
-    # Remove dopubles
-    original_set = frozenset(elements)
-
-    iterations = int(
-        input(
-            "\nNumber of iterations "
-            "(1 = P(A), 2 = P(P(A)), etc.):\n> "
-        )
-    )
-
-    filename = "powerset.tex"
-
-    if not filename:
-        filename = "power_set.tex"
-
-    if not filename.endswith(".tex"):
-        filename += ".tex"
-
-    current = original_set
-
-    for i in range(iterations):
-        current = power_set(current)
-
-        print(
-            f"Iteration {i + 1}: "
-            f"{len(current)} elements"
-        )
-
-    output = latex_set(current)
-
-    with open(filename, "w", encoding="utf-8") as file:
-        file.write(output)
-
-    print(f"\nDone!")
-    print(f"Result written to: {filename}")
-
-    if len(output) < 5000:
-        print("\nLaTeX output:")
-        print(output)
-    else:
-        print(
-            f"\nThe LaTeX output is {len(output):,} characters long."
-        )
-
-
-if __name__ == "__main__":
-    main()
-\end{lstlisting}
-
 \newpage
 
 
@@ -597,7 +374,7 @@ NO SEZRETS LEFT FOR EXZEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF 
 NO SECRETS LEFT FOR EXCEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM\\
 > lock C L X\\
 NO SECRETS LEFT FOR EXCEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM\\
-> quit \\\\\\\\
+> quit \\\\\\
 
 \textbf{NO SECRETS LEFT FOR EXCEPTIONAL STUDENTS FROM SOFTWARE ENGINEERING KNOWN AS FAF FROM UTM}
 
@@ -819,4 +596,153 @@ int main() {
 }
 \end{lstlisting}
 
+
+\section*{Problem 4.13}
+The key is $k=1013$ because $c_1=km_1$ and $c_2=km_2$ so $k=\frac{\gcd(c_1, c_2)}{\gcd(m_1, m_2)}$
+\\
+
+\textbf{RECTOR UTMM}\\
+\textbf{UTM FCIM 3-204}\\
+
+
+
+
+\textbf{Code:}
+\begin{lstlisting}[language=C++]
+    #include <iostream>
+#include <string>
+
+using namespace std;
+
+string divide(const string& num, long long d, long long& rem) {
+    string q;
+    long long r = 0;
+    for (char ch : num) {
+        r = r * 10 + (ch - '0');
+        q += char('0' + r / d);
+        r %= d;
+    }
+    rem = r;
+    size_t pos = q.find_first_not_of('0');
+    return pos == string::npos ? "0" : q.substr(pos);
+}
+
+char decodeChar(int code) {
+    if (code >= 1 && code <= 26) return char('A' + code - 1);
+    switch (code) {
+    case 27: return ' ';
+    case 28: return '*';
+    case 29: return ')';
+    case 30: return '?';
+    case 31: return ':';
+    case 32: return '(';
+    case 33: return '-';
+    case 34: return '+';
+    case 35: return '!';
+    case 36: return '1';
+    case 37: return '2';
+    case 38: return '3';
+    case 39: return '4';
+    case 40: return '5';
+    case 41: return '6';
+    case 42: return '7';
+    case 43: return '8';
+    case 44: return '9';
+    case 45: return '0';
+    }
+    return 0;
+}
+
+string decodeMessage(const string& digits, string& leftover, int& valid, int& total) {
+    string best;
+    int bestValid = -1;
+    for (int offset = 0; offset < 2; ++offset) {
+        string s = (offset ? "0" : "") + digits;
+        string text;
+        int v = 0;
+        for (size_t i = 0; i + 1 < s.size(); i += 2) {
+            int code = (s[i] - '0') * 10 + (s[i + 1] - '0');
+            char c = decodeChar(code);
+            if (c) { text += c; ++v; }
+            else text += '#';
+        }
+        if (v > bestValid) {
+            bestValid = v;
+            best = text;
+            valid = v;
+            total = (int)(s.size() / 2);
+            leftover = (s.size() % 2) ? string(1, s.back()) : "";
+        }
+    }
+    return best;
+}
+
+int main(int argc, char* argv[]) {
+    string cipher, keyStr;
+    if (argc >= 3) {
+        cipher = argv[1];
+        keyStr = argv[2];
+    }
+    else {
+        cout << "Ciphertext: ";
+        cin >> cipher;
+        cout << "Key:        ";
+        cin >> keyStr;
+    }
+
+    for (char c : cipher + keyStr)
+        if (c < '0' || c > '9') { cerr << "Only digits are allowed.\n"; return 1; }
+    long long key = stoll(keyStr);
+    if (key < 2) { cerr << "The key must be at least 2.\n"; return 1; }
+
+    long long rem;
+    string plainDigits = divide(cipher, key, rem);
+    if (rem != 0) {
+        cout << "Key " << key << " does not divide the ciphertext (remainder "
+            << rem << "), so it is not the right key.\n";
+        return 2;
+    }
+
+    string leftover;
+    int valid = 0, total = 0;
+    string text = decodeMessage(plainDigits, leftover, valid, total);
+
+    cout << "\nDecrypted number: " << plainDigits << "\n";
+    cout << "Decoded message : " << text << "\n";
+    if (!leftover.empty())
+        cout << "(one unpaired trailing digit: " << leftover << ")\n";
+    if (valid != total)
+        cout << "(only " << valid << " of " << total
+        << " two-digit codes are valid, so this key is probably wrong)\n";
+    return 0;
+}
+\end{lstlisting}
+
+\section*{Problem 4.14}
+\begin{enumerate}[label=\alph*)]
+    \item $$m^*=rem(m\cdot k, p)$$
+$$m^* = \text{rem}(475 \cdot 127,\;\; 503) = rem(60.325, \;\;503) = 468$$
+$$m^* = 468$$
+    \item $$m = \text{rem}(m^* \cdot k^{-1}, p) = \text{rem}(443 \cdot 6^{-1}, 503)$$
+    $$503 = 83 \cdot 6 + 5 \implies 5 = 503 - 83 \cdot 6$$ $$6 = 1 \cdot 5 + 1 \implies 1 = 6 - 1 \cdot 5$$
+    $$1 = 84 \cdot 6 - 1 \cdot 503$$
+    $$6^{-1} \equiv 84 \pmod{503}$$
+    $$m = \text{rem}(443 \cdot 84, 503) = \text{rem}(37.212,\; 503)=493$$
+    $${m = 493}$$
+\end{enumerate}
+
+\section*{Problem 4.15}
+\begin{align*}
+    k &= \text{rem}(m^{p-2} \cdot m^*, p) \\
+    &= \text{rem}(8^{11} \cdot 4, 13) \\
+    &= \text{rem}(8^{-1} \cdot 4, 13) \quad \text{where } 8 \cdot 5 \equiv 1 \pmod{13} \implies 8^{-1} = 5 \\
+    &= \text{rem}(5 \cdot 4, 13) \\
+    &= \text{rem}(20, 13) = 7
+\end{align*}
+
+\vspace{18.78cm}
+\begin{center}
+\fontsize{11}{8}\selectfont
+Vitalie is NS (natural stupidity) and made mistakes. Please perform two factor verification beyond Domashneye Rabota
+\end{center}
 \end{document}
