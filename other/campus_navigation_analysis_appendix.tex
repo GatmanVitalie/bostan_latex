@@ -1,0 +1,321 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{fontspec}
+\usepackage[english]{babel}
+\babelfont{rm}{Noto Sans}
+
+\usepackage{amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{hyperref}
+
+% Palette definition
+\definecolor{primary}{RGB}{30, 58, 138}       % Deep Navy
+\definecolor{secondary}{RGB}{15, 118, 110}     % Teal Accent
+\definecolor{accent}{RGB}{217, 119, 6}        % Gold/Amber
+\definecolor{lightbg}{RGB}{248, 250, 252}      % Soft Cool Gray
+\definecolor{cardbg}{RGB}{241, 245, 249}      % Slightly darker card bg
+\definecolor{bordercolor}{RGB}{203, 213, 225}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primary,
+    urlcolor=primary
+}
+
+% Custom Box Style
+\tcbset{
+    enhanced,
+    colback=lightbg,
+    colframe=primary,
+    fonttitle=\bfseries,
+    boxrule=1pt,
+    arc=4pt,
+    top=8pt, bottom=8pt, left=10pt, right=10pt
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% =========================================================
+% ELEGANT TITLE PAGE
+% =========================================================
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+
+    % Header Banner Decoration
+    {\Large \textbf{\textcolor{primary}{TECHNICAL UNIVERSITY OF MOLDOVA (UTM)}}} \\[0.4em]
+    {\large \textbf{\textcolor{secondary}{Faculty of Computers, Informatics and Microelectronics (FCIM)}}} \\[0.2em]
+    \rule{0.85\textwidth}{1.5pt}
+
+    \vspace{3.5cm}
+
+    % Main Title
+    {\Huge \bfseries \textcolor{primary}{Campus Navigation Analysis}} \\[1em]
+    {\Large \textcolor{secondary}{\textit{Empirical Evaluation of Student Travel Times Across Campus Routes}}} \\[0.5em]
+    {\small \textcolor{accent}{\textbf{APPENDIX A --- GROUP PROJECT DATA ANALYSIS}}}
+
+    \vspace{4.5cm}
+
+    % Author Box / Metadata Block
+    \begin{tcolorbox}[colframe=primary, colback=lightbg, width=0.85\textwidth, arc=6pt]
+        \centering
+        \vspace{0.3em}
+        {\large \textbf{Author Info}} \\[0.5em]
+        \rule{0.6\textwidth}{0.5pt} \\[0.6em]
+        \begin{tabular}{r l}
+            \textbf{Student Name:} & \textbf{Gatman Vitalie} \\
+            \textbf{Group:} & \textbf{FAF-263} \\
+            \textbf{Faculty:} & FCIM \\
+            \textbf{Institution:} & Technical University of Moldova (UTM) \\
+            \textbf{Study Topic:} & Campus Route Traversal ($t_1$ vs $t_2$) \\
+        \end{tabular}
+        \vspace{0.3em}
+    \end{tcolorbox}
+
+    \vfill
+
+    % Footer Date & Location
+    {\small \textcolor{gray}{Chişinău, Republic of Moldova}} \\
+    {\small \textcolor{gray}{\today}}
+
+\end{titlepage}
+
+\newpage
+\pagestyle{plain}
+\pagenumbering{arabic}
+
+% =========================================================
+% EXECUTIVE SUMMARY & OVERVIEW
+% =========================================================
+
+\begin{center}
+    {\Large \textbf{\textcolor{primary}{APPENDIX A: Empirical Evaluation of Campus Navigation Efficiency}}} \\[0.3em]
+    {\large \textcolor{secondary}{Comparative Analysis of Novel vs. Familiar Route Traversal Times ($t_1$ vs. $t_2$)}} \\[0.5em]
+    \rule{\textwidth}{1pt}
+\end{center}
+
+\vspace{0.5em}
+
+\begin{tcolorbox}[title=Executive Summary \& Methodology]
+This empirical investigation evaluates the cognitive spatial learning curve of students navigating key pathways within the Technical University of Moldova (UTM) campus. We recorded traversal duration under two distinct exposure conditions:
+\begin{itemize}
+    \item \textbf{Initial Search Time ($t_1$):} Elapsed time on the first traversal without prior navigation experience or directional guidance.
+    \item \textbf{Familiar Traversal Time ($t_2$):} Elapsed time on a subsequent traversal along the exact same path once familiarized.
+\end{itemize}
+Data collection focused on two benchmark routes originating at the front of \textbf{Building 6}, with \textbf{20 samples per route}:
+\begin{enumerate}
+    \item \textbf{Route 1:} Front of Building 6 $\rightarrow$ Building 5 Cafeteria (\textit{Complex indoor/corridor pathway})
+    \item \textbf{Route 2:} Front of Building 6 $\rightarrow$ Building 8 (\textit{Direct outdoor campus pathway})
+\end{enumerate}
+In addition, two \textbf{Extreme Outlier Cases} were documented to analyze severe cognitive disorientation and third-party navigation system failures.
+\end{tcolorbox}
+
+\vspace{1em}
+
+% =========================================================
+% METRIC CARDS / KEY HIGHLIGHTS
+% =========================================================
+
+\section*{1. Key Metric Highlights}
+
+\begin{center}
+\begin{tabular}{c c}
+\begin{tcolorbox}[width=0.46\textwidth, colframe=secondary, title={Route 1 Average Gain ($n=20$)}]
+    \centering
+    {\Huge \textbf{46.1\%}} \\[0.3em]
+    Time reduced from $230.5\text{ s}$ ($t_1$) to $124.25\text{ s}$ ($t_2$). \\
+    \textbf{Avg Saved:} 106.25 seconds.
+\end{tcolorbox} &
+\begin{tcolorbox}[width=0.46\textwidth, colframe=accent, title={Route 2 Average Gain ($n=20$)}]
+    \centering
+    {\Huge \textbf{64.9\%}} \\[0.3em]
+    Time reduced from $519.25\text{ s}$ ($t_1$) to $182.2\text{ s}$ ($t_2$). \\
+    \textbf{Avg Saved:} 337.05 seconds.
+\end{tcolorbox}
+\end{tabular}
+\end{center}
+
+\vspace{0.5em}
+\noindent\textit{Note: the average gain is computed as (mean $t_1$ $-$ mean $t_2$) / mean $t_1$.}
+
+\newpage
+
+% =========================================================
+% ROUTE 1 DATA
+% =========================================================
+
+\section*{2. Route 1 Analysis: Building 6 Front to Building 5 Cafeteria}
+
+Route 1 requires students to navigate from Building 6 into the internal structures leading to the Building 5 cafeteria. Because indoor corridor visual cues are restricted, initial traversal ($t_1$) displays significant variance caused by structural hesitation.
+
+\vspace{0.5em}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{c *{4}{>{\centering\arraybackslash}p{2.9cm}}}
+\toprule
+\textbf{Subject ID} & \textbf{Initial Time $t_1$ (sec)} & \textbf{Familiar Time $t_2$ (sec)} & \textbf{Difference $\Delta t$ (sec)} & \textbf{Time Savings (\%)} \\
+\midrule
+S-01 & 231 & 140 & 91 & 39.4\% \\
+S-02 & 202 & 110 & 92 & 45.5\% \\
+S-03 & 249 & 136 & 113 & 45.4\% \\
+S-04 & 214 & 130 & 84 & 39.3\% \\
+S-05 & 264 & 152 & 112 & 42.4\% \\
+S-06 & 201 & 104 & 97 & 48.3\% \\
+S-07 & 202 & 135 & 67 & 33.2\% \\
+S-08 & 226 & 129 & 97 & 42.9\% \\
+S-09 & 247 & 114 & 133 & 53.8\% \\
+S-10 & 203 & 106 & 97 & 47.8\% \\
+S-11 & 214 & 126 & 88 & 41.1\% \\
+S-12 & 273 & 123 & 150 & 54.9\% \\
+S-13 & 192 & 143 & 49 & 25.5\% \\
+S-14 & 218 & 107 & 111 & 50.9\% \\
+S-15 & 267 & 134 & 133 & 49.8\% \\
+S-16 & 184 & 124 & 60 & 32.6\% \\
+S-17 & 270 & 119 & 151 & 55.9\% \\
+S-18 & 310 & 143 & 167 & 53.9\% \\
+S-19 & 223 & 104 & 119 & 53.4\% \\
+S-20 & 220 & 106 & 114 & 51.8\% \\
+\midrule
+\textbf{Mean} & \textbf{230.5} & \textbf{124.25} & \textbf{106.25} & \textbf{46.1\%} \\
+\bottomrule
+\end{tabular}
+\caption{Experimental measurement recordings for Route 1 (Building 6 $\rightarrow$ Building 5 Cafeteria), 20 samples.}
+\end{table}
+
+\newpage
+
+% =========================================================
+% ROUTE 2 DATA
+% =========================================================
+
+\section*{3. Route 2 Analysis: Building 6 Front to Building 8}
+
+Route 2 represents an outdoor open pathway connecting Building 6 and Building 8. While sight lines are direct, spatial orientation overhead still contributed to noticeable initial delay during first exposure.
+
+\vspace{0.5em}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{c *{4}{>{\centering\arraybackslash}p{2.9cm}}}
+\toprule
+\textbf{Subject ID} & \textbf{Initial Time $t_1$ (sec)} & \textbf{Familiar Time $t_2$ (sec)} & \textbf{Difference $\Delta t$ (sec)} & \textbf{Time Savings (\%)} \\
+\midrule
+S-01 & 599 & 227 & 372 & 62.1\% \\
+S-02 & 591 & 183 & 408 & 69.0\% \\
+S-03 & 444 & 155 & 289 & 65.1\% \\
+S-04 & 511 & 180 & 331 & 64.8\% \\
+S-05 & 463 & 153 & 310 & 67.0\% \\
+S-06 & 584 & 182 & 402 & 68.8\% \\
+S-07 & 627 & 215 & 412 & 65.7\% \\
+S-08 & 449 & 151 & 298 & 66.4\% \\
+S-09 & 437 & 174 & 263 & 60.2\% \\
+S-10 & 456 & 176 & 280 & 61.4\% \\
+S-11 & 474 & 171 & 303 & 63.9\% \\
+S-12 & 491 & 162 & 329 & 67.0\% \\
+S-13 & 571 & 219 & 352 & 61.6\% \\
+S-14 & 608 & 217 & 391 & 64.3\% \\
+S-15 & 503 & 177 & 326 & 64.8\% \\
+S-16 & 588 & 193 & 395 & 67.2\% \\
+S-17 & 556 & 191 & 365 & 65.6\% \\
+S-18 & 436 & 144 & 292 & 67.0\% \\
+S-19 & 490 & 187 & 303 & 61.8\% \\
+S-20 & 507 & 187 & 320 & 63.1\% \\
+\midrule
+\textbf{Mean} & \textbf{519.25} & \textbf{182.2} & \textbf{337.05} & \textbf{64.9\%} \\
+\bottomrule
+\end{tabular}
+\caption{Experimental measurement recordings for Route 2 (Building 6 $\rightarrow$ Building 8), 20 samples.}
+\end{table}
+
+\noindent\textit{Note: the source record for sample S-04 lists $t_2$ as ``2:60''; it was interpreted as 3:00 (180 s).}
+
+\newpage
+
+% =========================================================
+% EXTREME OUTLIERS SECTION
+% =========================================================
+
+\section*{4. Analysis of Extreme Navigation Outliers}
+
+During the empirical data collection, two extreme cases were identified. These cases represent anomalous delays caused by initial spatial disorientation and misleading algorithmic navigation (Google Maps).
+
+\vspace{0.5em}
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{2.0cm} p{3.2cm} c c c p{2.6cm}}
+\toprule
+\textbf{Case ID} & \textbf{Pathway Description} & \textbf{$t_1$ (Initial)} & \textbf{$t_2$ (Familiar)} & \textbf{$\Delta t$ Saved} & \textbf{Primary Cause} \\
+\midrule
+\textbf{Outlier 1} \newline (2 Students) & Dormitory No. 2 $\rightarrow$ Sports Hall & 18.0 min \newline ($1080\text{ s}$) & 5.0 min \newline ($300\text{ s}$) & 13.0 min \newline ($780\text{ s}$) & Campus facility disorientation \\
+\midrule
+\textbf{Outlier 2} \newline (1 Student) & Dormitory No. 2 $\rightarrow$ Dormitory No. 10 & 14.0 min \newline ($840\text{ s}$) & 0.8 min \newline ($50\text{ s}$) & 13.2 min \newline ($790\text{ s}$) & Google Maps error (redirect to Dorm 12) \\
+\bottomrule
+\end{tabular}
+\caption{Extreme outlier recordings documenting severe initial navigation delays.}
+\end{table}
+
+\vspace{0.5em}
+
+\begin{tcolorbox}[colframe=accent, title=Detailed Case Breakdown: Extreme Outliers]
+\begin{itemize}
+    \item \textbf{Case 1: Initial Gym Facility Search (Dormitory 2 $\rightarrow$ Sports Hall)} \\
+    Two students searching for the Sports Hall for the first time experienced severe spatial confusion, taking \textbf{18 minutes (1080 s)} to locate the facility. Once the pathway was established, subsequent traversal required only \textbf{5 minutes (300 s)}, yielding a massive \textbf{72.2\% time reduction (13 minutes saved)}.
+    \item \textbf{Case 2: External Navigation Failure (Dormitory 2 $\rightarrow$ Dormitory 10 via Google Maps)} \\
+    A student attempting to navigate from Dormitory No. 2 to Dormitory No. 10 relied on Google Maps, which erroneously routed the student to \textbf{Dormitory No. 12}. This detour resulted in an initial travel time of \textbf{14 minutes (840 s)}. In reality, the direct physical pathway between Dormitory 2 and 10 requires \textbf{under 1 minute ($<50\text{ s}$)}, representing a staggering \textbf{94.0\% reduction} once external algorithmic error was eliminated.
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{1em}
+
+% =========================================================
+% VISUAL COMPARISON & CONCLUSION
+% =========================================================
+
+\newpage
+\section*{5. Comparative Visual Representation \& Integration}
+
+The empirical measurements show a mean reduction of \textbf{46.1\%} on Route 1 and \textbf{64.9\%} on Route 2, while extreme outlier conditions exhibit up to \textbf{94\% reduction} once spatial barriers and navigation errors are resolved. Bar lengths below use one common scale.
+
+\vspace{0.8em}
+
+\begin{center}
+\small
+\begin{tabular}{r l l}
+\toprule
+\textbf{Pathway / Phase} & \textbf{Mean Traversal Time} & \textbf{Relative Traversal Duration} \\
+\midrule
+\textbf{Route 1 ($t_1$)} & 230.5 s & \textcolor{primary}{\rule{1.6cm}{8pt}} \\
+\textbf{Route 1 ($t_2$)} & 124.25 s & \textcolor{secondary}{\rule{0.9cm}{8pt}} \\[0.4em]
+\textbf{Route 2 ($t_1$)} & 519.25 s & \textcolor{primary}{\rule{3.6cm}{8pt}} \\
+\textbf{Route 2 ($t_2$)} & 182.2 s & \textcolor{secondary}{\rule{1.3cm}{8pt}} \\[0.4em]
+\textbf{Outlier 1 ($t_1$)} & 1080.0 s (18 min) & \textcolor{accent}{\rule{7.5cm}{8pt}} \\
+\textbf{Outlier 1 ($t_2$)} & 300.0 s (5 min) & \textcolor{secondary}{\rule{2.1cm}{8pt}} \\[0.4em]
+\textbf{Outlier 2 ($t_1$)} & 840.0 s (14 min) & \textcolor{accent}{\rule{5.8cm}{8pt}} \\
+\textbf{Outlier 2 ($t_2$)} & 50.0 s ($<1$ min) & \textcolor{secondary}{\rule{0.3cm}{8pt}} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1.5em}
+
+\begin{tcolorbox}[colframe=primary, title=Project Integration Summary]
+\textbf{Key Takeaways for Group Project Report:}
+\begin{enumerate}
+    \item \textbf{Cognitive Adaptation:} A single initial attempt ($t_1$) allows students to construct a stable spatial mental map, decreasing subsequent travel times by 46.1\% (Route 1) to 64.9\% (Route 2) on average ($n=20$ per route).
+    \item \textbf{Route Search Overhead:} The absolute search overhead ($t_1 - t_2$) is $\approx 106.25\text{ s}$ on Route 1 versus $\approx 337.05\text{ s}$ on Route 2, so Route 2 has roughly 3.2 times the overhead of Route 1 in this dataset.
+    \item \textbf{Impact of Third-Party Navigation Errors:} Relying on commercial mapping tools (e.g., Google Maps) within university grounds can increase travel time by over 1600\% due to incorrect routing (e.g., misdirecting to Dormitory 12 instead of Dormitory 10).
+    \item \textbf{Practical Application:} Wayfinding signage and custom campus maps are critical near student dormitories and indoor junctions to prevent extreme navigation delays.
+\end{enumerate}
+\end{tcolorbox}
+
+\end{document}

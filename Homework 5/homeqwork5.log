@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.19)  8 SEP 2026 08:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.10.19)  2 NOV 2026 16:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/gatma/Desktop/bostan_latex/homeqwork1.tex
-(c:/Users/gatma/Desktop/bostan_latex/homeqwork1.tex
+**"c:/Users/gatma/Desktop/bostan_latex/Homework 5/homeqwork5.tex"
+(c:/Users/gatma/Desktop/bostan_latex/Homework 5/homeqwork5.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -735,6 +735,8 @@ Package: translations 2022/02/05 v1.12 internationalization of LaTeX2e packages 
 \l__siunitx_unit_tmp_int=\count385
 \l__siunitx_unit_position_int=\count386
 \l__siunitx_unit_total_int=\count387
+) (c:/texlive/2025/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (c:/texlive/2025/texmf-dist/tex/latex/filecontents/filecontents.sty
 Package: filecontents 2023/04/02 v1.5a Create an external file from within a LaTeX document
 
@@ -746,28 +748,28 @@ Package filecontents Warning: This package is obsolete. Disabling it and
 ) (c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 79.
- (./homeqwork1.aux)
-\openout1 = `homeqwork1.aux'.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 80.
+ (./homeqwork5.aux)
+\openout1 = `homeqwork5.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -803,10 +805,10 @@ LaTeX Font Info:    ... okay on input line 79.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 79.
-(./homeqwork1.out) (./homeqwork1.out)
+Package hyperref Info: Link coloring OFF on input line 80.
+(./homeqwork5.out) (./homeqwork5.out)
 \@outlinefile=\write4
-\openout4 = `homeqwork1.out'.
+\openout4 = `homeqwork5.out'.
 
  (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -834,13 +836,13 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 (c:/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 79.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 80.
 
 
-<ornament_6.pdf, id=7, 1284.8pt x 642.4pt>
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 98.
+<../ornament_6.pdf, id=7, 1284.8pt x 642.4pt>
+File: ../ornament_6.pdf Graphic file (type pdf)
+<use ../ornament_6.pdf>
+Package pdftex.def Info: ../ornament_6.pdf  used on input line 99.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -851,19 +853,34 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 
 [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./ornament_6.pdf>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 105.
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <../ornament_6.pdf>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 106.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 105.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 106.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (7.50539pt too wide) in paragraph at lines 113--114
+[][]\T1/cmr/m/n/12 Reflexive[], []Ire-flex-ive[], []Tran-si-tive[], []Si-met-ric[], []An-ti-si-met-ric[], []Asy-met-ric[], []Equiv-a-lent[], []Weak[],
+ []
 
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 190.
+
+Overfull \hbox (7.50539pt too wide) in paragraph at lines 114--115
+[][]\T1/cmr/m/n/12 Reflexive[], []Ire-flex-ive[], []Tran-si-tive[], []Si-met-ric[], []An-ti-si-met-ric[], []Asy-met-ric[], []Equiv-a-lent[], []Weak[],
+ []
+
+
+Overfull \hbox (7.50539pt too wide) in paragraph at lines 115--116
+[][]\T1/cmr/m/n/12 Reflexive[], []Ire-flex-ive[], []Tran-si-tive[], []Si-met-ric[], []An-ti-si-met-ric[], []Asy-met-ric[], []Equiv-a-lent[], []Weak[],
+ []
+
+
+
+File: ../ornament_6.pdf Graphic file (type pdf)
+<use ../ornament_6.pdf>
+Package pdftex.def Info: ../ornament_6.pdf  used on input line 117.
 (pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
 
 Package fancyhdr Warning: \headheight is too small (35.0pt): 
@@ -876,137 +893,28 @@ Package fancyhdr Warning: \headheight is too small (35.0pt):
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.190             "
-                   &": r"\&", [1]
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 235.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[2]
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 286.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[3]
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 332.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 336--340
-
- []
-
-
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 380.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[5]
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 399.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[6]
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 454.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[7]
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 541.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[8{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-
-File: ornament_6.pdf Graphic file (type pdf)
-<use ornament_6.pdf>
-Package pdftex.def Info: ornament_6.pdf  used on input line 610.
-(pdftex.def)             Requested size: 113.81102pt x 56.90189pt.
-
-Package fancyhdr Warning: \headheight is too small (35.0pt): 
-(fancyhdr)                Make it at least 61.25192pt, for example:
-(fancyhdr)                \setlength{\headheight}{61.25192pt}.
-(fancyhdr)                You might also make \topmargin smaller:
-(fancyhdr)                \addtolength{\topmargin}{-26.25192pt}.
-
-[9] (./homeqwork1.aux)
+l.117 \end{document}
+                     [1] (./homeqwork5.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
-Package rerunfilecheck Info: File `homeqwork1.out' has not changed.
+Package rerunfilecheck Info: File `homeqwork5.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 39117 strings out of 467748
- 916417 string characters out of 5431137
- 1802838 words of memory out of 5000000
- 67042 multiletter control sequences out of 15000+600000
- 641039 words of font info for 71 fonts, out of 8000000 for 9000
+ 38549 strings out of 467748
+ 911048 string characters out of 5431137
+ 1555445 words of memory out of 5000000
+ 66677 multiletter control sequences out of 15000+600000
+ 636221 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,15n,87p,763b,2839s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on homeqwork1.pdf (10 pages, 294760 bytes).
+ 84i,14n,87p,776b,1076s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb>
+Output written on homeqwork5.pdf (2 pages, 75567 bytes).
 PDF statistics:
- 392 PDF objects out of 1000 (max. 8388607)
- 336 compressed objects within 4 object streams
- 203 named destinations out of 1000 (max. 500000)
+ 52 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
+ 6 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

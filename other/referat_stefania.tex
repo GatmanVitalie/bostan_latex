@@ -1,0 +1,131 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Pachete necesare ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[romanian]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{hyperref}
+
+\geometry{margin=2.5cm}
+
+% --- Datele referatului ---
+\title{\textbf{Determinarea lungimii de undă a luminii monocromatice\\ cu ajutorul dispozitivului Young}}
+\author{Nume Prenume \\ Grupa / Seria}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Scopul lucrării}
+\begin{itemize}
+    \item Obținerea figurii de interferență a luminii cu ajutorul unui dispozitiv de tip Young.
+    \item Determinarea experimentală a lungimii de undă a unei radiații luminoase monocromatice.
+\end{itemize}
+
+\section{Teoria lucrării}
+Lumina este o undă electromagnetică. În dispozitivul Young, lumina provenită de la o sursă monocromatică \(S\) traversează un paravan opac cu două fante paralele și înguste \(S_1\) și \(S_2\), aflate la distanța \(d\) una de cealaltă. Undele difractate de cele două fante sunt coerente și interferă pe un ecran aflat la distanța \(D\) de planul fantelor.
+
+Diferența de drum optic dintre undele care ajung într-un punct \(P\) de pe ecran este:
+\[
+\delta = \delta_2 - \delta_1 = n\lambda,
+\]
+unde \(n\) este ordinul de interferență. Pentru maximele de interferență, poziția pe ecran este dată de relația:
+\[
+x_n = n\,\frac{\lambda D}{d}.
+\]
+
+Distanța dintre două maxime (sau minime) consecutive se numește \textbf{interfranjă} și se notează cu \(i\):
+\[
+i = x_{n+1} - x_n = \frac{\lambda D}{d}.
+\]
+
+Din relația de mai sus se obține formula de calcul pentru lungimea de undă:
+\[
+\lambda = \frac{d \cdot i}{D}.
+\]
+
+În practică, dacă se notează cu \(2l\) distanța dintre fante (adică \(d = 2l\)), formula devine:
+\[
+\lambda = \frac{2l \cdot i}{D},
+\]
+unde \(i\) este interfranja măsurată experimental[reference:0].
+
+\section{Descrierea montajului experimental}
+Montajul experimental cuprinde:
+\begin{itemize}
+    \item o sursă de lumină monocromatică (sau sursă de lumină albă prevăzută cu filtru monocromatic);
+    \item un paravan opac cu două fante paralele, subțiri și apropiate (dispozitiv Young);
+    \item un ecran sau un sistem optic de observare prevăzut cu șurub micrometric pentru măsurarea pozițiilor franjelor;
+    \item o riglă gradată sau un banc optic pentru măsurarea distanței \(D\) dintre planul fantelor și ecran.
+\end{itemize}
+
+Distanța dintre fante \(d\) (sau \(2l\)) este cunoscută din construcția dispozitivului. Distanța \(D\) se măsoară cu rigla sau cu ajutorul reperelor de pe bancă.
+
+\section{Modul de lucru}
+\begin{enumerate}
+    \item Se aliniază sursa de lumină, dispozitivul cu fante și ecranul astfel încât să fie coliniare.
+    \item Se reglează lățimea fantei sursei și poziția ecranului până când figura de interferență este clară și contrastantă.
+    \item Se măsoară distanța \(D\) dintre planul fantelor și ecran.
+    \item Se măsoară pozițiile a \(N\) franje luminoase consecutive (sau a unui grup de 5–10 franje) pentru a determina interfranja \(i\).
+    \item Se repetă măsurătorile pentru cel puțin 5–10 poziții diferite ale ecranului sau pentru mai multe grupuri de franje.
+    \item Se calculează lungimea de undă \(\lambda\) pentru fiecare determinare și se prelucrează statistic rezultatele.
+\end{enumerate}
+
+\section{Prelucrarea datelor experimentale}
+\subsection*{Calculul interfranjei}
+Dacă se măsoară pozițiile a \(N\) franje consecutive, interfranja se calculează cu relația:
+\[
+i = \frac{x_N - x_0}{N},
+\]
+unde \(x_0\) și \(x_N\) sunt pozițiile primei și ultimei franje din grupul măsurat.
+
+\subsection*{Calculul lungimii de undă}
+Pentru fiecare determinare se aplică formula:
+\[
+\lambda = \frac{d \cdot i}{D}.
+\]
+
+\subsection*{Calculul erorilor}
+Se calculează valoarea medie a lungimii de undă:
+\[
+\bar{\lambda} = \frac{1}{n}\sum_{k=1}^{n} \lambda_k.
+\]
+Eroarea pătratică medie (eroarea standard) se determină cu relația:
+\[
+\sigma_\lambda = \sqrt{\frac{\sum_{k=1}^{n} (\lambda_k - \bar{\lambda})^2}{n(n-1)}}.
+\]
+Rezultatul final se prezintă sub forma:
+\[
+\lambda = \bar{\lambda} \pm \sigma_\lambda.
+\]
+
+\section{Tabel de date (model)}
+\begin{table}[h!]
+\centering
+\caption{Model de tabel pentru înregistrarea datelor experimentale}
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+Nr. & \(D\) (m) & \(N\) franje & \(x_N - x_0\) (mm) & \(i\) (mm) & \(\lambda\) (nm) \\
+\midrule
+1 & & & & & \\
+2 & & & & & \\
+3 & & & & & \\
+\(\vdots\) & & & & & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{Observații}
+\begin{itemize}
+    \item Distanța dintre fante \(d\) trebuie exprimată în aceleași unități de măsură ca și interfranja \(i\) și distanța \(D\).
+    \item Pentru a reduce erorile, se recomandă măsurarea unui număr cât mai mare de franje și repetarea determinărilor.
+    \item În cazul luminii albe, franjele sunt colorate, iar măsurătorile se fac pentru o singură radiație monocromatică (cu filtru).
+\end{itemize}
+
+\end{document}
