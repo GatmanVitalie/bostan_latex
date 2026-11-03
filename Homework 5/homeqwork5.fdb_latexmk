@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1793689171.06694 "c:/Users/gatma/Desktop/bostan_latex/Homework 5/homeqwork5.tex" "homeqwork5.pdf" "homeqwork5" 1793689176.79003 0
+["pdflatex"] 1793690489.94165 "c:/Users/gatma/Desktop/bostan_latex/Homework 5/homeqwork5.tex" "homeqwork5.pdf" "homeqwork5" 1793690494.83757 0
   "../ornament_6.pdf" 1788702663 6324 3ca5441aba82b68480d2d4572c5357d1 ""
-  "c:/Users/gatma/Desktop/bostan_latex/Homework 5/homeqwork5.tex" 1793689164 27713 d4733fe44706a3893e787a703feeb40e ""
+  "c:/Users/gatma/Desktop/bostan_latex/Homework 5/homeqwork5.tex" 1793690487 27959 df0cd0ac7d4f2a24a4cdc37ebbebc7a8 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1760895202 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1760896963 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm" 1760896191 3584 ad49a18d8515beef6d92d4d3f197d0fd ""
@@ -20,7 +20,6 @@
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1760895164 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1760895164 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1760895164 1288 655e228510b4c2a1abe905c368440826 ""
-  "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1760895164 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1760895164 1300 b62933e007d01cfd073f79b963c01526 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1760895164 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1760895164 1124 6c73e740cf17375f03eec0ee63599741 ""
@@ -230,9 +229,9 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1760904351 5574153 af86687748baf417d9e7d549313527be ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1760904647 3629009 a5bc2956e3dedd8e18e7dd1170dc2100 ""
   "c:/texlive/2025/texmf.cnf" 1760904319 713 614551405fc44b98efbf516466e3c909 ""
-  "homeqwork5.aux" 1793689176 162 f042405b684a8c860cba07045d113040 "pdflatex"
-  "homeqwork5.out" 1793689174 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "homeqwork5.tex" 1793689164 27713 d4733fe44706a3893e787a703feeb40e ""
+  "homeqwork5.aux" 1793690493 162 f042405b684a8c860cba07045d113040 "pdflatex"
+  "homeqwork5.out" 1793690492 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "homeqwork5.tex" 1793690487 27959 df0cd0ac7d4f2a24a4cdc37ebbebc7a8 ""
   (generated)
   "homeqwork5.aux"
   "homeqwork5.log"
